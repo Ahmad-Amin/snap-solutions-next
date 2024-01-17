@@ -1,6 +1,6 @@
 const baseUrl =
   process.env.NODE_ENV === "production"
-    ? "https://main--admirable-treacle-014e7f.netlify.app"
-    : "http://localhost:3000";
+    ? "https://snapcreditsolutions.com"
+    : "http://localhost:3002";
 
 export default baseUrl;

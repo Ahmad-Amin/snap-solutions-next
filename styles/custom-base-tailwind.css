@@ -362,11 +362,11 @@
   font-family: sans-serif; /* 2 */
 }
 
-*,
+/* *,
 *::before,
 *::after {
   box-sizing: inherit;
-}
+} */
 
 /**
  * Removes the default spacing and border for appropriate elements.
