@@ -12,7 +12,7 @@ const TransactionsHistory = () => {
       try {
         // setSpinnerShow(true);
         const response = await axios.get(
-          `${process.env.BG_SERVERURL}/get-all-transactions`
+          `https://snap-solutions-backend.onrender.com/get-all-transactions`
         );
         console.log(response)
         if (response.status === 200 && response.data !== null) {

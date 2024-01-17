@@ -76,7 +76,7 @@ const EditAccountView = () => {
     try {
       setSpinnerShow(true);
       const response = await axios.put(
-        `${process.env.BG_SERVERURL}/update-user`,
+        `https://snap-solutions-backend.onrender.com/update-user`,
         transformedUser,
         {
           headers: {
