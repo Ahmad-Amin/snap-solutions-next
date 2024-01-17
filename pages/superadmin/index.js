@@ -73,10 +73,10 @@ const index = () => {
       <div className="tw-grid tw-grid-cols-2">
         <div className="tw-flex tw-justify-center tw-items-center tw-flex-col">
           <div>
-            <h1 className="tw-text-custom-blue tw-font-semibold tw-text-4xl">
+            <h1 className="tw-h1 tw-text-custom-blue tw-font-semibold tw-text-4xl">
               Welome Back
             </h1>
-            <p className="tw-text-neutral-500 tw-text-sm">
+            <p className="tw-p tw-text-neutral-500 tw-text-sm">
               Welome back! Please enter your details
             </p>
 
@@ -115,19 +115,19 @@ const index = () => {
                   />
                 </div>
               </div>
-              <button className="tw-my-5 tw-text-neutral-400 tw-block tw-text-center">
+              <button className="tw-button tw-my-5 tw-text-neutral-400 tw-block tw-text-center">
                 Forgot Password
               </button>
               <button
-                className="tw-w-full tw-bg-custom-blue tw-text-white tw-py-2 tw-rounded-lg"
+                className="tw-button tw-w-full tw-bg-custom-blue tw-text-white tw-py-2 tw-rounded-lg"
                 onClick={userSignIn}
               >
                 Sign In
               </button>
 
-              <p className="tw-text-neutral-400 tw-my-4 tw-text-center">
+              <p className="tw-p tw-text-neutral-400 tw-my-4 tw-text-center">
                 Don't have an account?{" "}
-                <button href="#" className="tw-text-custom-blue">
+                <button href="#" className="tw-button tw-text-custom-blue">
                   Sign up for free
                 </button>
               </p>
