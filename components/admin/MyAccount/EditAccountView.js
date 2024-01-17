@@ -77,12 +77,7 @@ const EditAccountView = () => {
       setSpinnerShow(true);
       const response = await axios.put(
         `https://snap-solutions-backend.onrender.com/update-user`,
-        transformedUser,
-        {
-          headers: {
-            "Content-Type": "multipart/form-data",
-          },
-        }
+        transformedUser
       );
 
       if (response.status === 200 && response.status !== null) {
