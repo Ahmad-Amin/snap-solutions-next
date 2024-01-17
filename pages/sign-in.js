@@ -44,7 +44,9 @@ const SignIn = () => {
       const url = `${baseUrl}/api/signIn`;
       const response = await axios.post(url, data);
 
-      console.log(response)
+      if (response.data.role === 'superadmin') {
+        throw new Error("Invalid Response")
+      }
       if (response.status === 200 && response.data !== null) {
         const user = response.data;
         userCtx.saveUserData(user);
