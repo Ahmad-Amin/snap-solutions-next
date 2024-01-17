@@ -1,6 +1,6 @@
 import Transaction from "../../../Model/Transaction";
 import User from "../../../Model/User";
-import connectDB from "../../lib/connectDB";
+import connectDB from "../../../lib/connectDB";
 import { ObjectId } from "mongoose";
 
 export default async (req, res) => {

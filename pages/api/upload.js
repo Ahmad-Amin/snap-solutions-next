@@ -1,5 +1,5 @@
 import multiparty from "multiparty";
-import connectDB from "../lib/connectDB";
+import connectDB from "../../lib/connectDB";
 import File from "../../Model/File";
 // import fs from "fs";
 import multer from "multer";

@@ -1,5 +1,5 @@
 import User from "../../../Model/User";
-import connectDB from "../../lib/connectDB";
+import connectDB from "../../../lib/connectDB";
 import nodemailer from "nodemailer";
 
 const transporter = nodemailer.createTransport({

@@ -1,6 +1,6 @@
 import User from "../../Model/User";
 import { binaryToDataURI } from "./Utils/imageUtils";
-import connectDB from "../lib/connectDB";
+import connectDB from "../../lib/connectDB";
 import { serialize } from "cookie";
 
 export default async (req, res) => {
