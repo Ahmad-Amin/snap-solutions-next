@@ -76,7 +76,7 @@ const EditAccountView = () => {
     try {
       setSpinnerShow(true);
       const response = await axios.put(
-        `http://localhost:5000/update-user`,
+        `${process.env.BG_SERVERURL}/update-user`,
         transformedUser,
         {
           headers: {

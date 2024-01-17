@@ -44,7 +44,9 @@ const NewTransaction = ({ setModalShow }) => {
     const getAllUsers = async () => {
       try {
         setSpinnerShow(true);
-        const response = await axios.get(`http://localhost:5000/get-all-users`);
+        const response = await axios.get(
+          `${process.env.BG_SERVERURL}/get-all-users`
+        );
         if (response.status === 200 && response.data !== null) {
           setSpinnerShow(false);
           userCtx.saveUsersToGlobalStore(response.data);

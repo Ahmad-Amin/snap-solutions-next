@@ -27,7 +27,7 @@ const AllUsersView = () => {
       try {
         setSpinnerShow(true);
         const response = await axios.get(
-          `http://localhost:5000/get-all-users`
+          `${process.env.BG_SERVERURL}/get-all-users`
         );
         if (response.status === 200 && response.data !== null) {
           userCtx.saveUsersToGlobalStore(response.data);
