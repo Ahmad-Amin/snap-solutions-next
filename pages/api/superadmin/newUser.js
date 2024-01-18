@@ -220,14 +220,14 @@ export default async (req, res) => {
     const savedUser = await newUser.save();
     const sender = await User.findOne({ role: "superadmin" });
 
-    // const mailOptions = {
-    //   from: "baigahmad323@gmail.com",
-    //   to: email,
-    //   subject: "Welcome to the Snap Credit Solution",
-    //   html: generateEmailTemplate(email, dummyPassword),
-    // };
+    const mailOptions = {
+      from: "baigahmad323@gmail.com",
+      to: email,
+      subject: "Welcome to the Snap Credit Solution",
+      html: generateEmailTemplate(email, dummyPassword),
+    };
 
-    // await transporter.sendMail(mailOptions);
+    await transporter.sendMail(mailOptions);
     if (savedUser) {
       const newTransaction = new Transaction({
         receiverName: name,
