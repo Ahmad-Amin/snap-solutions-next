@@ -102,7 +102,6 @@ const NewTransaction = ({ setModalShow }) => {
 
     const url = `${baseUrl}/api/superadmin/newTransaction`;
     const response = await axios.post(url, formData);
-    console.log(response)
 
     if (response.status === 201 && response.data !== null) {
       addToast(`Successfully, Transfered the Funds to ${formData.name}`, {
@@ -111,7 +110,6 @@ const NewTransaction = ({ setModalShow }) => {
       });
       setModalShow(false);
     } else {
-      console.log(response);
     }
   };
 

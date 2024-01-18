@@ -2,6 +2,7 @@ import Transaction from "../../../Model/Transaction";
 import User from "../../../Model/User";
 import connectDB from "../../../lib/connectDB";
 import { ObjectId } from "mongoose";
+import mongoose from "mongoose";
 
 export default async (req, res) => {
   try {
@@ -29,7 +30,6 @@ export default async (req, res) => {
     }
 
     if (sender.get("role") !== "superadmin") {
-      console.log("YES INSIDE");
       return res
         .status(401)
         .json({ error: "You are not authorized to perform this Action" });
@@ -44,12 +44,24 @@ export default async (req, res) => {
       phoneNumber,
       status: "Done",
       transactionMessage,
+      sender: sender.get("_id"),
     });
 
     const savedTransaction = await newTransaction.save();
 
+    const objectIdUserId = new mongoose.Types.ObjectId(receiver.get("_id"));
     if (savedTransaction) {
-      res.status(201).json(savedTransaction);
+      const savedTrans = await User.findOneAndUpdate(
+        { _id: objectIdUserId },
+        { $inc: { amount: amount } },
+        { new: true }
+      );
+
+      if (savedTrans) {
+        res.status(201).json({ savedTransaction, savedTrans });
+      } else {
+        throw new Error("There is some issue, while sending the transaction") 
+      }
     } else {
       res
         .status(404)

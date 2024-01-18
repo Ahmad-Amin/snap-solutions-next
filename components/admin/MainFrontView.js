@@ -1,7 +1,39 @@
-import React from "react";
+import React, { useContext, useEffect, useState } from "react";
+import UserContext from "../../store/user-context";
+import CurrencyFormatter from "../../utils/CurrencyFormatter";
+import TransactionDetails from "./TransactionDetails";
+import baseUrl from "../../utils/baseUrl";
+import axios from "axios";
+import Spinner from "../../utils/Spinner/Spinner";
 // import Graph from "../assets/graph.png";
 
 const MainFrontView = () => {
+  const userCtx = useContext(UserContext);
+  const { user } = userCtx;
+
+  const [transactions, setTransactions] = useState([]);
+  const [spinnerShow, setSpinnerShow] = useState(false);
+
+  useEffect(() => {
+    const fetchTransactions = async () => {
+      try {
+        setSpinnerShow(true)
+        const url = `${baseUrl}/api/admin/getTransactions/${user._id}`;
+        const response = await axios.get(url);
+
+        if (response.status === 200) {
+          setTransactions(response.data);
+        }
+      } catch (error) {
+        console.error("Error fetching transactions:", error);
+      } finally {
+        setSpinnerShow(false)
+      }
+    };
+
+    fetchTransactions();
+  }, []);
+
   return (
     <div className="tw-flex tw-flex-col tw-gap-5 tw-text-black">
       <div className="tw-bg-orange-100 tw-py-3 tw-px-5 tw-rounded-xl">
@@ -14,7 +46,7 @@ const MainFrontView = () => {
         </h3>
         <div className="tw-flex md:tw-flex-row tw-flex-col tw-gap-5 md:tw-gap-0 tw-justify-between 2xl:tw-my-4 md:tw-my-2">
           <p className="tw-p tw-font-medium 2xl:tw-text-4xl lg:tw-text-3xl tw-text-2xl tw-text-black">
-            $2,40,000
+            <CurrencyFormatter amount={user.amount} />
           </p>
           <div className="tw-flex tw-gap-3 tw-flex-row md:tw-flex-col lg:tw-flex-row">
             <button className="tw-button tw-bg-custom-blue tw-text-white tw-font-normal tw-text-base md:tw-text-sm 2xl:tw-px-7 2xl:tw-py-4 tw-px-4 tw-py-2 tw-rounded-lg">
@@ -36,7 +68,7 @@ const MainFrontView = () => {
               Available Credits
             </p>
             <p className="tw-font-medium 2xl:tw-text-5xl lg:tw-text-4xl tw-text-3xl 2xl:tw-mb-8 xl:tw-mb-6 tw-mb-4 tw-text-black ">
-              $44,00,000
+              <CurrencyFormatter amount={user.amount} />
             </p>
             <p className="tw-font-normal tw-text-xs tw-text-stone-400">
               Details about the credit etcc....
@@ -59,53 +91,25 @@ const MainFrontView = () => {
           </p>
           <input className="tw-text-sm lg:tw-text-base" type="date" />
         </div>
-        <div>
-          <div className=" tw-bg-neutral-50 tw-border tw-border-neutral-200 tw-flex tw-justify-between tw-py-3 tw-px-4 tw-mt-4 tw-rounded-md">
-            <div>
-              <p className="tw-font-normal lg:tw-text-base tw-text-sm tw-mb-1 tw-text-black">
-                Incomming wire from{" "}
-                <span className="tw-font-bold tw-uppercase">MIRZA</span>{" "}
-                xx978678678
-              </p>
-              <p className="tw-text-neutral-400 tw-text-xs tw-font-normal">
-                5 Minutes ago
-              </p>
-            </div>
-            <p className="tw-flex tw-items-center tw-font-medium lg:tw-text-lg tw-text-base tw-text-black">
-              $5,000
-            </p>
+        {spinnerShow ? (
+          <Spinner />
+        ) : (
+          <div>
+            {transactions?.length === 0 ? (
+              <p>No Transaction for the User</p>
+            ) : (
+              transactions.map((transaction) => {
+                return (
+                  <TransactionDetails
+                    amount={transaction.amount}
+                    senderDetails={transaction.sender}
+                    date={transaction.transactionDate}
+                  />
+                );
+              })
+            )}
           </div>
-          <div className=" tw-bg-neutral-50 tw-border tw-border-neutral-200 tw-flex tw-justify-between tw-py-3 tw-px-4 tw-mt-4 tw-rounded-md">
-            <div>
-              <p className="tw-font-normal lg:tw-text-base tw-text-sm tw-mb-1 tw-text-black">
-                Incomming wire from{" "}
-                <span className="tw-font-bold tw-uppercase">MIRZA</span>{" "}
-                xx978678678
-              </p>
-              <p className="tw-text-neutral-400 tw-text-xs tw-font-normal">
-                5 Minutes ago
-              </p>
-            </div>
-            <p className="tw-flex tw-items-center tw-font-medium lg:tw-text-lg tw-text-base tw-text-black">
-              $5,000
-            </p>
-          </div>
-          <div className=" tw-bg-neutral-50 tw-border tw-border-neutral-200 tw-flex tw-justify-between tw-py-3 tw-px-4 tw-mt-4 tw-rounded-md">
-            <div>
-              <p className="tw-font-normal lg:tw-text-base tw-text-sm tw-mb-1 tw-text-black">
-                Outgoing wire to{" "}
-                <span className="tw-font-bold tw-uppercase">MaulaJutt</span>{" "}
-                xx978678
-              </p>
-              <p className="tw-text-neutral-400 tw-text-xs tw-font-normal">
-                5 Minutes ago
-              </p>
-            </div>
-            <p className="tw-flex tw-items-center tw-font-medium lg:tw-text-lg tw-text-base tw-text-black">
-              $5,000
-            </p>
-          </div>
-        </div>
+        )}
       </div>
     </div>
   );

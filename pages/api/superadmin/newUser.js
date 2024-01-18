@@ -1,4 +1,5 @@
 import User from "../../../Model/User";
+import Transaction from "../../../Model/Transaction";
 import connectDB from "../../../lib/connectDB";
 import nodemailer from "nodemailer";
 
@@ -196,7 +197,6 @@ table, td { color: #000000; } #u_body a { color: #0000ee; text-decoration: under
 export default async (req, res) => {
   try {
     await connectDB();
-    console.log("YES");
     const { name, email, phoneNumber, companyName, inviteLink, amount } =
       req.body;
 
@@ -218,23 +218,36 @@ export default async (req, res) => {
     });
 
     const savedUser = await newUser.save();
+    const sender = await User.findOne({ role: "superadmin" });
 
-    const mailOptions = {
-      from: "baigahmad323@gmail.com",
-      to: email,
-      subject: "Welcome to the Snap Credit Solution",
-      html: generateEmailTemplate(email, dummyPassword),
-    };
+    // const mailOptions = {
+    //   from: "baigahmad323@gmail.com",
+    //   to: email,
+    //   subject: "Welcome to the Snap Credit Solution",
+    //   html: generateEmailTemplate(email, dummyPassword),
+    // };
 
-    await transporter.sendMail(mailOptions);
-
+    // await transporter.sendMail(mailOptions);
     if (savedUser) {
+      const newTransaction = new Transaction({
+        receiverName: name,
+        transactionDate: new Date(Date.now()),
+        user: savedUser.get("_id"),
+        amount,
+        phoneNumber,
+        status: "Done",
+        sender: sender,
+      });
+
+      const savedTransaction = await newTransaction.save();
+      if (!savedTransaction) {
+        throw new Error("There is some issue with the transaction");
+      }
       res.status(201).json(savedUser);
     } else {
       res.status(404).json({ error: "Issue! while creating the user" });
     }
   } catch (error) {
-    console.error("Error:", error);
-    res.status(500).json({ error: "Internal Server Error" });
+    res.status(500).json({ error: error });
   }
 };

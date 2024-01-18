@@ -71,8 +71,6 @@ const EditAccountView = () => {
       },
     };
 
-    console.log(transformedUser)
-
     try {
       setSpinnerShow(true);
       const response = await axios.put(
@@ -89,7 +87,6 @@ const EditAccountView = () => {
         router.push("/admin/settings");
       }
     } catch (error) {
-      console.log(error);
       addToast(`Error: ${error.response.data.error}`, {
         appearance: "success",
         autoDismiss: true,

@@ -13,7 +13,7 @@ export default async (req, res) => {
     }
 
     let user = await User.findOne({ email, password });
-
+    console.log(user)
     if (user) {
       user = user.toObject();
       user.displayImage = binaryToDataURI(user.displayImage);

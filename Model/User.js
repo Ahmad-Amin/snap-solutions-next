@@ -8,7 +8,7 @@ const User = new mongoose.Schema({
     type: String,
     default: "Active",
   },
-  amount: String,
+  amount: Number,
   additionalUserDetails: {
     description: String,
     roleDescription: String,

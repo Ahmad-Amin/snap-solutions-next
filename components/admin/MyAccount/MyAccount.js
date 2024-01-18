@@ -9,7 +9,6 @@ const MyAccount = () => {
   const { user } = userCtx;
 
   useEffect(() => {
-    console.log(userCtx.user)
     if (Object.keys(user).length === 0) {
       router.push("/dashboard");
     }

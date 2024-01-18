@@ -35,7 +35,6 @@ const AddNewUser = ({ onhideDetails }) => {
       setSpinnerShow(true);
       const url = `${baseUrl}/api/superadmin/newUser`;
       const response = await axios.post(url, newUserDetails);
-      console.log(response);
       if (response.status === 201 && response.status !== null) {
         addToast("User added successfully", {
           appearance: "success",

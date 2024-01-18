@@ -14,7 +14,6 @@ const TransactionsHistory = () => {
         const response = await axios.get(
           `https://snap-solutions-backend.onrender.com/get-all-transactions`
         );
-        console.log(response)
         if (response.status === 200 && response.data !== null) {
           // setuserList(response.data);
           setTransactionsData(response.data);

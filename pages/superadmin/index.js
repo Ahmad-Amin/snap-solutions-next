@@ -47,7 +47,6 @@ const index = () => {
         router.push("/dashboard");
       }
     } catch (error) {
-      console.log(error);
       addToast(`Incorrect Credentails`, {
         appearance: "error",
         autoDismiss: true,
