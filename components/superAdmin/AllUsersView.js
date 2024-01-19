@@ -107,6 +107,8 @@ const AllUsersView = () => {
                 <UserRecord
                   key={rec.id || rec._id}
                   name={rec?.name}
+                  firstName={rec?.firstName}
+                  lastName={rec?.lastName}
                   email={rec.email}
                   id={rec.id || rec._id}
                   investType={rec.investType}

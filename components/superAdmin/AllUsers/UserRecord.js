@@ -4,6 +4,8 @@ import CurrencyFormatter from "../../../utils/CurrencyFormatter";
 
 const UserRecord = ({
   name,
+  firstName,
+  lastName,
   email,
   id,
   investType,
@@ -21,6 +23,8 @@ const UserRecord = ({
     // onDelete(userId);
     setShowDropdown(false);
   };
+
+  const name = name || (firstName || "") + (lastName ? ` ${lastName}` : "");
 
   return (
     <tr className=" tw-cursor-pointer tw-font-normal tw-text-base">
