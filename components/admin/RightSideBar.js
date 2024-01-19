@@ -33,7 +33,7 @@ const RightSideBar = () => {
             revolving line of credit
           </p>
           <p className=" tw-text-black tw-font-bold tw-text-2xl ">
-            <CurrencyFormatter amount="500000" />
+            <CurrencyFormatter amount={user.revolvingLineOfCredit || "0"} />
           </p>
         </div>
         <div className=" tw-shadow-md tw-p-5 tw-rounded-md tw-flex tw-flex-col tw-justify-between">
@@ -41,7 +41,7 @@ const RightSideBar = () => {
             estimated pay off
           </p>
           <p className=" tw-text-black tw-font-bold tw-text-2xl ">
-            <CurrencyFormatter amount="500000" />
+            <CurrencyFormatter amount={user.estimatedPayOff || "0"} />
           </p>
         </div>
       </div>
@@ -51,7 +51,7 @@ const RightSideBar = () => {
             Amount due date
           </p>
           <p className=" tw-text-black tw-font-bold tw-text-2xl ">
-            <CurrencyFormatter amount="000" />
+            <CurrencyFormatter amount={user.amountDueDate || "0"} />
           </p>
         </div>
         <div className=" tw-shadow-md tw-p-5 tw-rounded-md tw-flex tw-flex-col tw-justify-between">
@@ -59,7 +59,7 @@ const RightSideBar = () => {
             Past due date
           </p>
           <p className=" tw-text-black tw-font-bold tw-text-2xl ">
-            <CurrencyFormatter amount="000" />
+            <CurrencyFormatter amount={user.pastDueDate || "0"} />
           </p>
         </div>
       </div>
@@ -69,7 +69,7 @@ const RightSideBar = () => {
             Term
           </p>
           <p className=" tw-p tw-font-bold tw-text-2xl tw-text-black">
-            36 months
+            {user.term || "---"}
           </p>
         </div>
         <div className=" tw-flex tw-justify-between tw-flex-row">
@@ -77,7 +77,7 @@ const RightSideBar = () => {
             ORIGINATION DATE
           </p>
           <p className=" tw-p tw-font-bold tw-text-2xl tw-text-black">
-            12/19/2024
+            {user.originationDate || "---"}
           </p>
         </div>
         <div className=" tw-flex tw-justify-between tw-flex-row">
@@ -91,7 +91,7 @@ const RightSideBar = () => {
             PAYMENT FREQUENCY
           </p>
           <p className=" tw-p tw-font-bold tw-text-2xl tw-text-black">
-            30 days
+            {user.paymentFrequency || "---"}
           </p>
         </div>
       </div>

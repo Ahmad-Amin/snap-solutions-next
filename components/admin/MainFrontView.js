@@ -17,7 +17,7 @@ const MainFrontView = () => {
   useEffect(() => {
     const fetchTransactions = async () => {
       try {
-        setSpinnerShow(true)
+        setSpinnerShow(true);
         const url = `${baseUrl}/api/admin/getTransactions/${user._id}`;
         const response = await axios.get(url);
 
@@ -27,7 +27,7 @@ const MainFrontView = () => {
       } catch (error) {
         console.error("Error fetching transactions:", error);
       } finally {
-        setSpinnerShow(false)
+        setSpinnerShow(false);
       }
     };
 
@@ -38,7 +38,7 @@ const MainFrontView = () => {
     <div className="tw-flex tw-flex-col tw-gap-5 tw-text-black">
       <div className="tw-bg-orange-100 tw-py-3 tw-px-5 tw-rounded-xl">
         <h1 className="tw-h1 tw-font-medium 2xl:tw-text-2xl lg:tw-text-xl tw-text-lg tw-text-custom-blue">
-          AV Seals labour group LLC,{" "}
+          {user.companyName || "---"}{" "}
           <span className="tw-font-normal tw-text-lg">Dashboard</span>
         </h1>
         <h3 className="tw-h3 tw-font-medium 2xl:tw-text-lg lg:tw-text-base">

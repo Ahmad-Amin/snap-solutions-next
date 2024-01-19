@@ -26,6 +26,14 @@ const User = new mongoose.Schema({
     accountNumber: String,
     expiryDate: String,
   },
+  pastDueDate: String,
+  originationDate: String,
+  revolvingLineOfCredit: String,
+  companyName: String,
+  amountDueDate: String,
+  term: String,
+  paymentFrequency: String,
+  estimatedPayOff: String
 });
 
 export default mongoose.models.User || mongoose.model("User", User);

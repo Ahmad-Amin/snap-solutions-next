@@ -197,22 +197,43 @@ table, td { color: #000000; } #u_body a { color: #0000ee; text-decoration: under
 export default async (req, res) => {
   try {
     await connectDB();
-    const { name, email, phoneNumber, companyName, inviteLink, amount } =
-      req.body;
+    const {
+      name,
+      email,
+      phoneNumber,
+      companyName,
+      amount,
+      estimatedPayOff,
+      pastDueDate,
+      originationDate,
+      revolvingLineOfCredit,
+      amountDueDate,
+      term,
+      paymentFrequency,
+    } = req.body;
 
     if (!email) {
       return res.status(400).json({ error: "Email is required" });
     }
     const dummyPassword = generateDummyPassword();
 
+    const [firstName, lastName] = name.split(" ");
+
     const newUser = new User({
       email,
-      name,
+      firstName,
+      lastName,
       password: dummyPassword,
       phoneNumber,
       companyName,
-      inviteLink,
       amount,
+      estimatedPayOff,
+      pastDueDate,
+      originationDate,
+      revolvingLineOfCredit,
+      amountDueDate,
+      term,
+      paymentFrequency,
     });
 
     const savedUser = await newUser.save();
