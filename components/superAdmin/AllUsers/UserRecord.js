@@ -24,7 +24,7 @@ const UserRecord = ({
     setShowDropdown(false);
   };
 
-  const name = name || (firstName || "") + (lastName ? ` ${lastName}` : "");
+  const displayName = name || ((firstName || "") + (lastName ? ` ${lastName}` : ""));
 
   return (
     <tr className=" tw-cursor-pointer tw-font-normal tw-text-base">
@@ -38,12 +38,12 @@ const UserRecord = ({
             />
           ) : (
             <div className=" tw-w-11 tw-h-11 tw-rounded-full tw-bg-pink-300 tw-uppercase tw-flex tw-justify-center tw-items-center">
-              {name && name.substring(0, 2)}
+              {displayName && displayName.substring(0, 2)}
             </div>
           )}
           <div>
             <p className="tw-p tw-font-medium tw-text-sm tw-leading-5 tw-text-gray-900">
-              {name}
+              {displayName}
             </p>
             <p className="tw-p tw-font-normal tw-text-sm tw-leading-5 tw-text-neutral-500">
               {email}
