@@ -391,6 +391,10 @@
   grid-template-columns: repeat(6, minmax(0, 1fr)) !important
 }
 
+.tw-grid-cols-1 {
+  grid-template-columns: repeat(1, minmax(0, 1fr)) !important
+}
+
 .tw-flex-row {
   flex-direction: row !important
 }
@@ -506,6 +510,11 @@
 
 .tw-rounded-xl {
   border-radius: 0.75rem !important
+}
+
+.tw-rounded-e-lg {
+  border-start-end-radius: 0.5rem !important;
+  border-end-end-radius: 0.5rem !important
 }
 
 .tw-rounded-tl-2xl {
@@ -972,6 +981,12 @@
   color: rgb(120 113 108 / var(--tw-text-opacity)) !important
 }
 
+.tw-shadow-md {
+  --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1) !important;
+  --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color) !important;
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow) !important
+}
+
 .tw-transition {
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter !important;
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter !important;
@@ -1160,6 +1175,10 @@
 @media (min-width: 1024px) {
   .lg\:tw-grid-cols-4 {
     grid-template-columns: repeat(4, minmax(0, 1fr)) !important
+  }
+
+  .lg\:tw-grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important
   }
 
   .lg\:tw-flex-row {
