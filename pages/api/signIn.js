@@ -15,8 +15,8 @@ export default async (req, res) => {
     let user = await User.findOne({ email, password });
     if (user) {
       user = user.toObject();
-      user.displayImage = binaryToDataURI(user.displayImage);
-      res.setHeader("Set-Cookie", serialize("userId", user._id));
+      // user.displayImage = binaryToDataURI(user.displayImage);
+      // res.setHeader("Set-Cookie", serialize("userId", user._id));
       res.json(user);
     } else {
       res.status(404).json({ error: "User not found" });

@@ -209,10 +209,8 @@ export default async (req, res) => {
       email,
       name,
       password: dummyPassword,
-      additionalUserDetails: {
-        phoneNumber,
-        companyName,
-      },
+      phoneNumber,
+      companyName,
       inviteLink,
       amount,
     });

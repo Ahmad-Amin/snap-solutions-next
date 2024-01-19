@@ -8,26 +8,26 @@ const MyAccount = () => {
   const router = useRouter();
   const { user } = userCtx;
 
-  useEffect(() => {
-    if (Object.keys(user).length === 0) {
-      router.push("/dashboard");
-    }
-  }, [userCtx.user, router]);
+  // useEffect(() => {
+  //   if (Object.keys(user).length === 0) {
+  //     router.push("/dashboard");
+  //   }
+  // }, [userCtx.user, router]);
 
   const {
-    additionalUserDetails: {
-      description,
-      roleDescription,
-      companyName,
-      companyAddress,
-      phoneNumber,
-      achievements,
-      references,
-    } = {},
+    description,
+    roleDescription,
+    companyName,
+    companyAddress,
+    phoneNumber,
+    achievements,
+    references,
     email,
-    displayImage,
-    name,
+    firstName,
+    lastName,
   } = userCtx.user;
+
+  const name = (firstName || "") + (lastName ? ` ${lastName}` : "");
 
   return (
     <div className="tw-px-20">
@@ -35,11 +35,14 @@ const MyAccount = () => {
         My Account
       </p>
       <div className="tw-p tw-flex tw-flex-col tw-gap-4 tw-justify-center tw-items-center">
-        <img
+        <div className=" tw-w-40 tw-h-40 tw-rounded-full tw-bg-pink-300 tw-uppercase tw-flex tw-justify-center tw-items-center tw-text-5xl">
+          {name && name.substring(0, 2)}
+        </div>
+        {/* <img
           src={displayImage}
           alt="Display Avatar"
           className="tw-w-40 tw-h-40 tw-rounded-full tw-object-cover"
-        />
+        /> */}
         <p className=" tw-font-bold tw-text-xl">{name}</p>
       </div>
       <div className="tw-flex tw-gap-2 tw-flex-col">

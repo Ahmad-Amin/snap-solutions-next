@@ -67,7 +67,7 @@ const index = () => {
       <img
         className="tw-h-auto tw-max-w-full"
         alt="Website logo"
-        src="/images/siteLogo.png"
+        src="/images/logo-white.png"
       />
       <div className="tw-grid tw-grid-cols-2">
         <div className="tw-flex tw-justify-center tw-items-center tw-flex-col">

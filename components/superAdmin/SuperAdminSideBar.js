@@ -28,7 +28,7 @@ const SuperAdminSideBar = () => {
       <img
         className="tw-h-auto tw-max-w-full"
         alt="Website logo"
-        src="/images/siteLogo.png"
+        src="/images/logo-white.png"
       />
       <div className="tw-px-7 tw-py-9">
         <div id="mainmenu">

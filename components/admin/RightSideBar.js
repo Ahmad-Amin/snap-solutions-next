@@ -1,6 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
+import UserContext from "../../store/user-context";
 
 const RightSideBar = () => {
+  const userCtx = useContext(UserContext);
+  const { user } = userCtx;
+
   return (
     <div className="tw-flex tw-flex-col tw-gap-3 lg:tw-gap-5">
       <div className="tw-text-white tw-bg-indigo-700 tw-rounded-lg tw-overflow-hidden">
@@ -11,13 +15,13 @@ const RightSideBar = () => {
           <div className="tw-text-sm tw-flex tw-justify-between">
             <p className="tw-p tw-font-normal tw-text-white">Account no</p>
             <p className="tw-p tw-font-bold tw-text-base tw-text-white">
-              76543276525
+              {user.accountDetails?.accountNumber || "xxxxxxxx"}
             </p>
           </div>
           <div className="tw-text-sm tw-flex tw-justify-between">
             <p className="tw-p tw-font-normal tw-text-white">Expiry Date:</p>
             <p className="tw-p tw-font-bold tw-text-base tw-text-white">
-              26-11-2024
+              {user.accountDetails?.expiryDate || "XX/XX"}
             </p>
           </div>
         </div>

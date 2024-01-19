@@ -1,5 +1,4 @@
 import React, { useContext } from "react";
-import siteLogo from "../../public/images/siteLogo.png";
 
 import { LuLayoutDashboard } from "react-icons/lu";
 import { RiDriveLine } from "react-icons/ri";
@@ -29,7 +28,7 @@ const Sidebar = () => {
       <img
         className="tw-h-auto tw-max-w-full"
         alt="Website logo"
-        src="/images/siteLogo.png"
+        src="/images/logo-white.png"
       />
       <div className="tw-px-7 tw-py-9">
         <div id="mainmenu">
@@ -50,12 +49,17 @@ const Sidebar = () => {
             isEnabled={true}
             link="/admin/storage"
           />
+        </div>
+
+        <div id="otherSection" className="tw-mt-10">
+          <p className="tw-p tw-uppercase tw-text-xs tw-font-medium tw-py-2 tw-text-neutral-600">
+            Other
+          </p>
           <MenuButtons
-            icon={<CgNotes />}
-            menuText="overview"
-            color="#B2B2B2"
-            isEnabled={false}
-            link="#"
+            icon={<IoMdSettings />}
+            menuText="settings"
+            isEnabled={true}
+            link="/admin/settings"
           />
           <div onClick={handleLogOut}>
             <MenuButtons
@@ -65,24 +69,6 @@ const Sidebar = () => {
               link="#"
             />
           </div>
-        </div>
-
-        <div id="otherSection" className="tw-mt-10">
-          <p className="tw-p tw-uppercase tw-text-xs tw-font-medium tw-py-2 tw-text-neutral-600">
-            Other
-          </p>
-          <MenuButtons
-            icon={<BiSupport />}
-            menuText="support"
-            isEnabled={false}
-            link="#"
-          />
-          <MenuButtons
-            icon={<IoMdSettings />}
-            menuText="settings"
-            isEnabled={true}
-            link="/admin/settings"
-          />
         </div>
       </div>
     </div>
