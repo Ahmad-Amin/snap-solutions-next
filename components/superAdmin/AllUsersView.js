@@ -7,6 +7,7 @@ import axios from "axios";
 import Spinner from "../../utils/Spinner/Spinner";
 import UserContext from "../../store/user-context";
 import AddNewUser from "./AllUsers/AddNewUser";
+import baseUrl from "../../utils/baseUrl";
 
 const AllUsersView = () => {
   const [modalShow, setModalShow] = useState(false);
@@ -27,7 +28,7 @@ const AllUsersView = () => {
       try {
         setSpinnerShow(true);
         const response = await axios.get(
-          `https://snap-solutions-backend.onrender.com/get-all-users`
+          `${baseUrl}/api/superadmin/get-all-users`
         );
         if (response.status === 200 && response.data !== null) {
           userCtx.saveUsersToGlobalStore(response.data);

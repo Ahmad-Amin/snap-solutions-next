@@ -8,13 +8,25 @@ import NewTransaction from "./NewTransaction";
 // import TransactionsHistory from "../../components/SuperAdmin/TransactionsHistory";
 // import NewTransaction from "../../components/SuperAdmin/NewTransaction";
 // import Modal from "../../UI/Modal";
-import Modal from '../../utils/Modal/Modal'
+import Modal from "../../utils/Modal/Modal";
 
 const SuperDashboard = () => {
   const [modalShow, setModalShow] = useState(false);
 
+  const [transactionDetails, setTransactionDetails] = useState({
+    count: 0,
+    amount: 0
+  })
+
   const handleAddTransaction = () => {
     setModalShow(true);
+  };
+
+  const setTransData = (count, totalAmount) => {
+    setTransactionDetails({
+      count: count,
+      amount: totalAmount
+    })
   };
 
   return (
@@ -43,9 +55,15 @@ const SuperDashboard = () => {
           <p className="tw-font-normal tw-text-xs">Add Transaction</p>
         </div>
       </div>
-      <div className="tw-mt-8"><OverviewCards /></div>
-      <div className="tw-mt-6"><RecentPayment /></div>
-      <div className="tw-mt-8"><TransactionsHistory /></div>
+      <div className="tw-mt-8">
+        <OverviewCards transactionDetails={transactionDetails} />
+      </div>
+      <div className="tw-mt-6">
+        <RecentPayment />
+      </div>
+      <div className="tw-mt-8">
+        <TransactionsHistory setTransData={setTransData} />
+      </div>
       {modalShow && (
         <Modal onhideDetails={() => setModalShow(false)}>
           <NewTransaction setModalShow={setModalShow} />

@@ -1,11 +1,15 @@
-import React from "react";
+import React, { useEffect, useContext } from "react";
+import axios from "axios";
+import baseUrl from "../../utils/baseUrl";
+import UserContext from "../../store/user-context";
+import CurrencyFormatter from "../../utils/CurrencyFormatter";
 // import { Chart } from "react-google-charts";
 // import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 // import { Doughnut } from "react-chartjs-2";
 
 // ChartJS.register(ArcElement, Tooltip, Legend);
 
-const OverviewCards = () => {
+const OverviewCards = ({ transactionDetails }) => {
   // const overviewCardData = [
   //   {
   //     name: "User",
@@ -89,6 +93,30 @@ const OverviewCards = () => {
   //   },
   // };
 
+  const userCtx = useContext(UserContext);
+
+  useEffect(() => {
+    // first
+    if (userCtx.allUsers.length !== 0) return;
+    const getAllUsers = async () => {
+      try {
+        // setSpinnerShow(true);
+        const response = await axios.get(
+          `${baseUrl}/api/superadmin/get-all-users`
+        );
+        if (response.status === 200 && response.data !== null) {
+          userCtx.saveUsersToGlobalStore(response.data);
+        }
+      } catch (error) {
+        console.log(error);
+      } finally {
+        // setSpinnerShow(false);
+      }
+    };
+
+    getAllUsers();
+  }, []);
+
   return (
     <div className="tw-grid tw-grid-cols-4 tw-gap-7">
       <div className=" tw-bg-white tw-px-5 tw-py-4 tw-rounded-2xl">
@@ -96,7 +124,9 @@ const OverviewCards = () => {
           <p className="tw-p  tw-font-medium tw-text-sm tw-text-neutral-500">
             Users
           </p>
-          <p className="tw-p  tw-font-bold tw-text-2xl">4,209</p>
+          <p className="tw-p  tw-font-bold tw-text-2xl">
+            {userCtx.allUsers.length}
+          </p>
         </div>
       </div>
       <div className=" tw-bg-white tw-px-5 tw-py-4 tw-rounded-2xl">
@@ -104,7 +134,9 @@ const OverviewCards = () => {
           <p className="tw-p tw-font-medium tw-text-sm tw-text-neutral-500">
             Transactions
           </p>
-          <p className="tw-p tw-font-bold tw-text-2xl">1,302</p>
+          <p className="tw-p tw-font-bold tw-text-2xl">
+            {transactionDetails.count}
+          </p>
         </div>
       </div>
       <div className=" tw-bg-white tw-px-5 tw-py-4 tw-rounded-2xl">
@@ -112,7 +144,9 @@ const OverviewCards = () => {
           <p className="tw-p tw-font-medium tw-text-sm tw-text-neutral-500">
             Total Amount
           </p>
-          <p className="tw-p tw-font-bold tw-text-2xl">$55,00,000</p>
+          <p className="tw-p tw-font-bold tw-text-2xl">
+            <CurrencyFormatter amount={transactionDetails.amount} />
+          </p>
         </div>
       </div>
       <div className="tw-flex tw-gap-5 tw-flex-col">

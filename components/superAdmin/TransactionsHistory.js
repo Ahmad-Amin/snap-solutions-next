@@ -4,7 +4,7 @@ import Transaction from "./Transaction";
 import axios from "axios";
 import Spinner from "../../utils/Spinner/Spinner";
 
-const TransactionsHistory = () => {
+const TransactionsHistory = ({ setTransData }) => {
   const [transactionsData, setTransactionsData] = useState([]);
 
   useEffect(() => {
@@ -17,6 +17,11 @@ const TransactionsHistory = () => {
         if (response.status === 200 && response.data !== null) {
           // setuserList(response.data);
           setTransactionsData(response.data);
+          const transactionAmount = response.data.reduce(
+            (sum, currentObject) => sum + currentObject.amount,
+            0
+          );
+          setTransData(response.data.length, transactionAmount);
           // setSpinnerShow(false);
         }
       } catch (error) {

@@ -45,7 +45,7 @@ const NewTransaction = ({ setModalShow }) => {
       try {
         setSpinnerShow(true);
         const response = await axios.get(
-          `https://snap-solutions-backend.onrender.com/get-all-users`
+          `${baseUrl}/api/superadmin/get-all-users`
         );
         if (response.status === 200 && response.data !== null) {
           setSpinnerShow(false);
