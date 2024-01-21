@@ -168,6 +168,10 @@
   grid-column: span 2 / span 2 !important
 }
 
+.tw-col-span-5 {
+  grid-column: span 5 / span 5 !important
+}
+
 .tw-float-right {
   float: right !important
 }

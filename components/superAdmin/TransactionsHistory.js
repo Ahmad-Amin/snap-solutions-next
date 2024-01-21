@@ -7,11 +7,12 @@ import Spinner from "../../utils/Spinner/Spinner";
 
 const TransactionsHistory = ({ setTransData }) => {
   const [transactionsData, setTransactionsData] = useState([]);
+  const [spinnerShow, setSpinnerShow] = useState(false);
 
   useEffect(() => {
     const getAllTransactions = async () => {
       try {
-        // setSpinnerShow(true);
+        setSpinnerShow(true);
         const response = await axios.get(
           `${baseUrl}/api/superadmin/get-all-transactions`
         );
@@ -28,6 +29,8 @@ const TransactionsHistory = ({ setTransData }) => {
       } catch (error) {
         console.log(error);
         // setSpinnerShow(false);
+      } finally {
+        setSpinnerShow(false);
       }
     };
 
@@ -60,17 +63,21 @@ const TransactionsHistory = ({ setTransData }) => {
             </tr>
           </thead>
           <tbody>
-            {transactionsData.map((rec, index) => (
-              <Transaction
-                key={index}
-                name={rec.receiverName}
-                image="/images/rp-1.png"
-                transactionType={rec.transactionType}
-                status={rec.status}
-                amount={rec.amount}
-                date={rec.transactionDate}
-              />
-            ))}
+            {spinnerShow ? (
+              <Spinner />
+            ) : (
+              transactionsData.map((rec, index) => (
+                <Transaction
+                  key={index}
+                  name={rec.receiverName}
+                  image="/images/rp-1.png"
+                  transactionType={rec.transactionType}
+                  status={rec.status}
+                  amount={rec.amount}
+                  date={rec.transactionDate}
+                />
+              ))
+            )}
           </tbody>
         </table>
       </div>
