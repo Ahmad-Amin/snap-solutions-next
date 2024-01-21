@@ -100,7 +100,7 @@ const NewTransaction = ({ setModalShow }) => {
       return;
     }
 
-    const url = `${baseUrl}/api/superadmin/newTransaction`;
+    const url = `${baseUrl}/api/superadmin/new-transaction`;
     const response = await axios.post(url, formData);
 
     if (response.status === 201 && response.data !== null) {
