@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import baseUrl from "../../utils/baseUrl";
 // import recentPaymentOne from "../../assets/rp-1.png";
 import Transaction from "./Transaction";
 import axios from "axios";
@@ -12,7 +13,7 @@ const TransactionsHistory = ({ setTransData }) => {
       try {
         // setSpinnerShow(true);
         const response = await axios.get(
-          `https://snap-solutions-backend.onrender.com/get-all-transactions`
+          `${baseUrl}/api/superadmin/get-all-transactions`
         );
         if (response.status === 200 && response.data !== null) {
           // setuserList(response.data);
