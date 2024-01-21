@@ -148,6 +148,18 @@
   right: 0px !important
 }
 
+.tw-bottom-11 {
+  bottom: 2.75rem !important
+}
+
+.-tw-bottom-11 {
+  bottom: -2.75rem !important
+}
+
+.-tw-top-10 {
+  top: -2.5rem !important
+}
+
 .tw-col-span-1 {
   grid-column: span 1 / span 1 !important
 }
@@ -316,6 +328,18 @@
 
 .tw-h-48 {
   height: 12rem !important
+}
+
+.tw-h-96 {
+  height: 24rem !important
+}
+
+.tw-h-64 {
+  height: 16rem !important
+}
+
+.tw-h-44 {
+  height: 11rem !important
 }
 
 .tw-w-11 {
