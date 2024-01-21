@@ -210,8 +210,10 @@ export default async (req, res) => {
       amountDueDate,
       term,
       paymentFrequency,
+      accountDetails,
     } = req.body;
 
+    console.log(req.body)
     if (!email) {
       return res.status(400).json({ error: "Email is required" });
     }
@@ -234,6 +236,7 @@ export default async (req, res) => {
       amountDueDate,
       term,
       paymentFrequency,
+      accountDetails,
     });
 
     const savedUser = await newUser.save();

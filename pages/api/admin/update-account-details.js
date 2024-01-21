@@ -11,9 +11,6 @@ export default async (req, res) => {
       }
     };
 
-    console.log(req.body);
-    console.log(updatedUserData);
-
     const updatedUser = await User.findOneAndUpdate(
       { _id: req.body._id },
       updatedUserData,

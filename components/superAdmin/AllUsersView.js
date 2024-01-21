@@ -122,7 +122,6 @@ const AllUsersView = () => {
           </table>
         )}
       </div>
-
       {modalShow && (
         <Modal onhideDetails={() => setModalShow(false)}>
           <AddNewUser onhideDetails={() => setModalShow(false)} />
