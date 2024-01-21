@@ -5,6 +5,7 @@ import TransactionDetails from "./TransactionDetails";
 import baseUrl from "../../utils/baseUrl";
 import axios from "axios";
 import Spinner from "../../utils/Spinner/Spinner";
+import Link from "next/link";
 // import Graph from "../assets/graph.png";
 
 const MainFrontView = () => {
@@ -49,9 +50,11 @@ const MainFrontView = () => {
             <CurrencyFormatter amount={user.amount} />
           </p>
           <div className="tw-flex tw-gap-3 tw-flex-row md:tw-flex-col lg:tw-flex-row">
-            <button className="tw-button tw-bg-custom-blue tw-text-white tw-font-normal tw-text-base md:tw-text-sm 2xl:tw-px-7 2xl:tw-py-4 tw-px-4 tw-py-2 tw-rounded-lg">
-              Access Funds
-            </button>
+            <Link href={"/admin/AccessFunds"}>
+              <p className="tw-button tw-bg-custom-blue tw-text-white tw-font-normal tw-text-base md:tw-text-sm 2xl:tw-px-7 2xl:tw-py-4 tw-px-4 tw-py-2 tw-rounded-lg">
+                Access Funds
+              </p>
+            </Link>
             <button className=" tw-button tw-text-base md:tw-text-sm 2xl:tw-px-7 2xl:tw-py-4 tw-px-4 tw-py-2 tw-rounded-lg tw-font-normal tw-text-custom-blue tw-bg-transparent tw-border tw-border-custom-blue">
               Send Message
             </button>
