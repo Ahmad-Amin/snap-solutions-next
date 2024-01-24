@@ -71,7 +71,7 @@ const MainFrontView = () => {
               Available Credits
             </p>
             <p className="tw-font-medium 2xl:tw-text-5xl lg:tw-text-4xl tw-text-3xl 2xl:tw-mb-8 xl:tw-mb-6 tw-mb-4 tw-text-black ">
-              <CurrencyFormatter amount={user.amount} />
+              100%
             </p>
             <p className="tw-font-normal tw-text-xs tw-text-stone-400">
               Details about the credit etcc....

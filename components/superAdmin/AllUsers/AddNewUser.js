@@ -193,7 +193,7 @@ const AddNewUser = ({ onhideDetails }) => {
                   className="tw-input tw-border tw-border-neutral-400 tw-text-neutral-400 tw-rounded-lg tw-py-1.5 tw-px-4"
                   id="cp_name"
                   placeholder="Past Due Date"
-                  type="text"
+                  type="date"
                   value={newUserDetails.pastDueDate}
                   onChange={(e) =>
                     handleUserInputChange("pastDueDate", e.target.value)

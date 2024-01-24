@@ -59,7 +59,7 @@ const RightSideBar = () => {
             Past due date
           </p>
           <p className=" tw-text-black tw-font-bold tw-text-2xl ">
-            <CurrencyFormatter amount={user.pastDueDate || "0"} />
+            {user.pastDueDate}
           </p>
         </div>
       </div>
