@@ -8,7 +8,7 @@ export default async (req, res) => {
       .sort({
         transactionDate: -1,
       })
-      .populate("user", "profileImage");;
+      .populate("user", "profileImage");
 
     if (allTransactions) {
       res.json(allTransactions);
