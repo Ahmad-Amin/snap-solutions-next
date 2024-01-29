@@ -4,9 +4,11 @@ import connectDB from "../../../lib/connectDB";
 export default async (req, res) => {
   try {
     await connectDB();
-    const allTransactions = await Transaction.find({}).sort({
-      transactionDate: -1,
-    });
+    const allTransactions = await Transaction.find({})
+      .sort({
+        transactionDate: -1,
+      })
+      .populate("user", "profileImage");;
 
     if (allTransactions) {
       res.json(allTransactions);

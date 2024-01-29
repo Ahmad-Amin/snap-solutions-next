@@ -5,15 +5,18 @@ export default async (req, res) => {
   try {
     await connectDB();
 
+    console.log(req)
+    const userRecord = JSON.parse(req.body)
+
     const updatedUserData = {
-      $set: req.body,
+      $set: userRecord,
     };
 
-    const currentPassword = req.body.currentPassword;
-    const newPassword = req.body.newPassword;
+    const currentPassword = userRecord.currentPassword;
+    const newPassword = userRecord.newPassword;
 
     if (newPassword && currentPassword) {
-      const user = await User.findById(req.body._id)
+      const user = await User.findById(userRecord._id);
       if (user.password === currentPassword) {
         updatedUserData.$set['password'] = newPassword
       } else {
@@ -23,18 +26,18 @@ export default async (req, res) => {
       }
     }
 
-    console.log(req.body)
-    console.log(updatedUserData);
+    // console.log(req.body)
+    // console.log(updatedUserData);
 
 
 
     const updatedUser = await User.findOneAndUpdate(
-      { _id: req.body._id },
+      { _id: userRecord._id },
       updatedUserData,
       { returnDocument: "after" }
     );
 
-    console.log(updatedUser)
+    // console.log(updatedUser)
     if (updatedUser) {
       // updatedUser.displayImage = binaryToDataURI(updatedUser.displayImage);
       return res.json(updatedUser);
@@ -43,6 +46,7 @@ export default async (req, res) => {
     }
     
   } catch (error) {
+    console.log(error);
     res.status(500).json({ error: error });
   }
 };

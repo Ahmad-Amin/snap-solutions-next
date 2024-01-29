@@ -18,7 +18,7 @@ const options = {
   plugins: {
     legend: {
       display: true,
-      position: "left",
+      position: "bottom",
       labels: {
         boxWidth: 15,
         boxHeight: 10,
@@ -28,9 +28,7 @@ const options = {
   responsive: true,
 };
 
-
 const OverviewCards = ({ transactionDetails }) => {
-
   const userCtx = useContext(UserContext);
 
   useEffect(() => {
@@ -54,55 +52,37 @@ const OverviewCards = ({ transactionDetails }) => {
 
   return (
     <div className="tw-grid tw-grid-cols-4 tw-gap-7">
-      <div className=" tw-bg-white tw-px-5 tw-py-4 tw-rounded-2xl tw-h-60 tw-overflow-hidden">
+      <div className=" tw-bg-white tw-px-5 tw-py-4 tw-rounded-2xl">
         <div className=" ">
           <p className="tw-p  tw-font-medium tw-text-sm tw-text-neutral-500">
             Users
           </p>
-          <p className="tw-p  tw-font-bold tw-text-2xl">
+          <p className="tw-p  tw-font-bold tw-text-2xl  tw-mb-5">
             <CountUp end={userCtx.allUsers.length} />
           </p>
-          <div className=" tw-relative">
-            <Doughnut
-              className=" tw-absolute -tw-top-10"
-              data={userdata}
-              options={options}
-            />
-          </div>
+          <Doughnut data={userdata} options={options} />
         </div>
       </div>
-      <div className=" tw-bg-white tw-px-5 tw-py-4 tw-rounded-2xl tw-h-60 tw-overflow-hidden">
+      <div className=" tw-bg-white tw-px-5 tw-py-4 tw-rounded-2xl tw-overflow-hidden">
         <div>
           <p className="tw-p tw-font-medium tw-text-sm tw-text-neutral-500">
             Transactions
           </p>
-          <p className="tw-p tw-font-bold tw-text-2xl">
+          <p className="tw-p tw-font-bold tw-text-2xl  tw-mb-5">
             <CountUp end={transactionDetails.count} />
           </p>
-          <div className=" tw-relative">
-            <Doughnut
-              className=" tw-absolute -tw-top-10"
-              data={transactionsGraphData}
-              options={options}
-            />
-          </div>
+          <Doughnut data={transactionsGraphData} options={options} />
         </div>
       </div>
-      <div className=" tw-bg-white tw-px-5 tw-py-4 tw-rounded-2xl tw-h-60 tw-overflow-hidden">
+      <div className=" tw-bg-white tw-px-5 tw-py-4 tw-rounded-2xl tw-overflow-hidden">
         <div>
           <p className="tw-p tw-font-medium tw-text-sm tw-text-neutral-500">
             Total Amount
           </p>
-          <p className="tw-p tw-font-bold tw-text-2xl">
+          <p className="tw-p tw-font-bold tw-text-2xl tw-mb-5">
             <CurrencyFormatter amount={transactionDetails.amount} />
           </p>
-          <div className=" tw-relative">
-            <Doughnut
-              className=" tw-absolute -tw-top-10"
-              data={totalAmountData}
-              options={options}
-            />
-          </div>
+          <Doughnut className="" data={totalAmountData} options={options} />
         </div>
       </div>
       <div className="tw-flex tw-gap-5 tw-flex-col">

@@ -19,20 +19,16 @@ const EditAccountView = () => {
   const { user } = userCtx;
   const { addToast } = useToasts();
   const [userDetails, setUserDetails] = useState({});
+  const [profileImage, setProfileImage] = useState(null);
+  const [uploading, setUploading] = useState(false);
 
   useEffect(() => {
-    // const { id } = router.query;
-    // if (Object.keys(userCtx.user).length === 0) {
-    //   router.push("/dashboard");
-    // }
-
     const userKeys = Object.keys(userCtx.user);
     const initialUserDetails = {};
     userKeys.map((key) => {
       initialUserDetails[key] = userCtx.user[key];
     });
     setUserDetails(initialUserDetails);
-
   }, []);
 
   const handleEditFormSubmission = async (e) => {
@@ -42,7 +38,12 @@ const EditAccountView = () => {
       setSpinnerShow(true);
       const response = await axios.put(
         `${baseUrl}/api/update-user`,
-        userDetails
+        userDetails,
+        {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+        }
       );
 
       if (response.status === 200 && response.status !== null) {
@@ -60,6 +61,45 @@ const EditAccountView = () => {
       });
     } finally {
       setSpinnerShow(false);
+    }
+  };
+
+  const handleImageUpload = async (e) => {
+    e.preventDefault();
+    if (!profileImage) return;
+
+    setUploading(true);
+
+    // const formData = new FormData();
+    // formData.append("profileImage", profileImage);
+
+    const formData = new FormData();
+    formData.append("file", profileImage);
+    formData.append("userId", user._id);
+
+    const response = await axios.post(
+      `${baseUrl}/api/upload-display-image`,
+      formData,
+      {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      }
+    );
+
+    if (response.status === 200) {
+      addToast("Successfully, Uploaded the Image", {
+        appearance: "success",
+        autoDismiss: true,
+      });
+      router.push("/admin/settings");
+    }
+    setUploading(false);
+
+    try {
+    } catch (error) {
+      console.log(error);
+      setUploading(false);
     }
   };
 
@@ -86,12 +126,17 @@ const EditAccountView = () => {
                 type="file"
                 accept="image/*"
                 className="tw-text-sm tw-text-stone-500 file:tw-bg-transparent file:tw-border-none"
-                // onChange={(e) =>
-                //   handleUserInputChange("displayImage", e.target.files[0])
-                // }
+                onChange={(e) => setProfileImage(e.target.files[0])}
               />
               {/* {displayImage && <img src={displayImage} alt="Preview" />} */}
             </div>
+            <button
+              onClick={handleImageUpload}
+                disabled={!profileImage || uploading}
+                className=" tw-button"
+            >
+              {uploading ? "Uploading..." : "Upload Image"}
+            </button>
           </div>
           <div className="tw-flex tw-gap-2 tw-flex-col">
             <p className="tw-p tw-font-medium lg:tw-text-xl tw-text-base">

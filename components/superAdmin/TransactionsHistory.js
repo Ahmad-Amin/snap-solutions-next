@@ -70,7 +70,7 @@ const TransactionsHistory = ({ setTransData }) => {
                 <Transaction
                   key={index}
                   name={rec.receiverName}
-                  image="/images/rp-1.png"
+                  profileImage={rec.user?.profileImage}
                   transactionType={rec.transactionType}
                   status={rec.status}
                   amount={rec.amount}

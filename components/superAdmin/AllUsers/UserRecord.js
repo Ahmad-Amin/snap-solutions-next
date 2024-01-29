@@ -1,6 +1,11 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { BsThreeDotsVertical } from "react-icons/bs";
 import CurrencyFormatter from "../../../utils/CurrencyFormatter";
+import { useToasts } from "react-toast-notifications";
+
+import axios from "axios";
+import baseUrl from "../../../utils/baseUrl";
+import UserContext from "../../../store/user-context";
 
 const UserRecord = ({
   name,
@@ -12,19 +17,41 @@ const UserRecord = ({
   status,
   amount,
   displayImage,
-  onDelete,
 }) => {
   const [showDropdown, setShowDropdown] = useState(false);
+  const userCtx = useContext(UserContext)
+  const { addToast } = useToasts();
   const handleDropdownClick = () => {
     setShowDropdown(!showDropdown);
   };
 
-  const handleDeleteClick = (userId) => {
-    // onDelete(userId);
-    setShowDropdown(false);
+  const handleDeleteClick = async (userId) => {
+    try {
+      const url = `${baseUrl}/api/superadmin/delete-user/${userId}`;
+      const response = await axios.get(url);
+
+      if (response.status == 200) {
+        addToast(`User deleted successfully`, {
+          appearance: "success",
+          autoDismiss: true,
+        });
+
+        const userList = userCtx.allUsers.filter((user) => user._id !== userId);
+        userCtx.saveUsersToGlobalStore(userList);
+
+      } else {
+        addToast(`Error Deleting the User`, {
+          appearance: "success",
+          autoDismiss: true,
+        });
+      }
+    } catch (error) {
+      console.error("Error Deleting the User:", error);
+    } 
   };
 
-  const displayName = name || ((firstName || "") + (lastName ? ` ${lastName}` : ""));
+  const displayName =
+    name || (firstName || "") + (lastName ? ` ${lastName}` : "");
 
   return (
     <tr className=" tw-cursor-pointer tw-font-normal tw-text-base">
@@ -75,6 +102,14 @@ const UserRecord = ({
         <p className="tw-p tw-font-medium tw-text-xs tw-text-neutral-700 tw-rounded-2xl tw-px-2 tw-py-1 tw-inline ">
           {amount && <CurrencyFormatter amount={amount} />}
         </p>
+      </td>
+      <td className="tw-py-4 tw-px-2 tw-min-w-22 tw-text-center ">
+        <button
+          onClick={() => handleDeleteClick(id)}
+          className=" hover:tw-bg-red-500 tw-border tw-bg-white tw-text-red tw-border-red-500 tw-transform tw-duration-300 tw-rounded-2xl tw-px-3 tw-py-1 tw-text-xs hover:tw-text-white"
+        >
+          Delete
+        </button>
       </td>
       <td className="tw-py-4 tw-px-2 tw-min-w-36 tw-relative ">
         <button

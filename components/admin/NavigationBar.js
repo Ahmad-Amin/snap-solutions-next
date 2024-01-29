@@ -13,7 +13,7 @@ import Link from "next/link";
 const NavigationBar = ({ showLogo }) => {
   const userCtx = useContext(UserContext);
 
-  const { firstName, lastName, displayImage } = userCtx.user;
+  const { firstName, lastName, profileImage } = userCtx.user;
   const name = (firstName || "") + (lastName ? ` ${lastName}` : "");
 
   const displayName = name.trim() || "No Name";
@@ -29,9 +29,9 @@ const NavigationBar = ({ showLogo }) => {
         <div className="tw-flex lg:tw-flex-row tw-flex-col tw-gap-3 tw-justify-end tw-flex-1">
           <div className="tw-flex tw-flex-row lg:tw-gap-7 lg:tw-justify-center tw-gap-3 tw-justify-end tw-items-center">
             <div className="tw-flex tw-justify-start tw-items-center tw-gap-3 tw-cursor-pointer">
-              {displayImage ? (
+              {profileImage ? (
                 <img
-                  src={displayImage}
+                  src={profileImage}
                   alt="User Profile"
                   className=" tw-w-11 tw-h-11 tw-rounded-full tw-object-cover"
                 />

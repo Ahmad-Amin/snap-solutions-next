@@ -18,10 +18,6 @@ const AllUsersView = () => {
     setModalShow(true);
   };
 
-  const handleDeleteUser = (userId) => {
-    console.log(userId);
-  };
-
   useEffect(() => {
     if (userCtx.allUsers.length !== 0) return;
     const getAllUsers = async () => {
@@ -32,6 +28,7 @@ const AllUsersView = () => {
         );
         if (response.status === 200 && response.data !== null) {
           userCtx.saveUsersToGlobalStore(response.data);
+          setAllUsers(response.data);
         }
       } catch (error) {
         console.log(error);
@@ -99,6 +96,12 @@ const AllUsersView = () => {
                 <th
                   scope="col"
                   className="tw-px-6 tw-py-3 tw-text-center tw-font-medium tw-text-xs"
+                >
+                  Actions
+                </th>
+                <th
+                  scope="col"
+                  className="tw-px-6 tw-py-3 tw-text-center tw-font-medium tw-text-xs"
                 ></th>
               </tr>
             </thead>
@@ -115,7 +118,6 @@ const AllUsersView = () => {
                   status={rec.status}
                   amount={rec.amount}
                   displayImage={rec.displayImage}
-                  onDelete={handleDeleteUser}
                 />
               ))}
             </tbody>

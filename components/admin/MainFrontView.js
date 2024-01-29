@@ -55,11 +55,16 @@ const MainFrontView = () => {
                 Access Funds
               </p>
             </Link>
-            <button className=" tw-button tw-text-base md:tw-text-sm 2xl:tw-px-7 2xl:tw-py-4 tw-px-4 tw-py-2 tw-rounded-lg tw-font-normal tw-text-custom-blue tw-bg-transparent tw-border tw-border-custom-blue">
+            {/* <button className=" tw-button tw-text-base md:tw-text-sm 2xl:tw-px-7 2xl:tw-py-4 tw-px-4 tw-py-2 tw-rounded-lg tw-font-normal tw-text-custom-blue tw-bg-transparent tw-border tw-border-custom-blue">
               Send Message
-            </button>
+            </button> */}
           </div>
         </div>
+        <p>
+          *As per the terms outlined in your original contract, there are certain
+          conditions and requirements that must be met to gain access to your
+          revolving line of credit
+        </p>
         <p className="tw-p tw-font-normal tw-text-base tw-text-red-500 tw-my-3">
           100%
         </p>

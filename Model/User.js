@@ -4,7 +4,7 @@ const User = new mongoose.Schema({
   email: { type: String, required: true },
   password: { type: String, required: true },
   status: { type: String, default: "Active" },
-  // displayImage: { type: String, default: Buffer.from([])},
+  displayImage: { type: Buffer },
   description: String,
   roleDescription: String,
   lastCompanies: String,
@@ -33,7 +33,8 @@ const User = new mongoose.Schema({
   amountDueDate: String,
   term: String,
   paymentFrequency: String,
-  estimatedPayOff: String
+  estimatedPayOff: String,
+  profileImage: String
 });
 
 export default mongoose.models.User || mongoose.model("User", User);

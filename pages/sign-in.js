@@ -25,7 +25,8 @@ const SignIn = () => {
 
   useEffect(() => {
     const storedUser = localStorage.getItem("user");
-    if (storedUser) {
+    if (storedUser?.length === 0) localStorage.removeItem("user");
+    if (storedUser && storedUser.length !== 0) {
       const user = JSON.parse(storedUser);
       userCtx.saveUserData(user);
       router.push("/dashboard");

@@ -25,6 +25,7 @@ const MyAccount = () => {
     email,
     firstName,
     lastName,
+    profileImage,
   } = userCtx.user;
 
   const name = (firstName || "") + (lastName ? ` ${lastName}` : "");
@@ -35,9 +36,18 @@ const MyAccount = () => {
         My Account
       </p>
       <div className="tw-p tw-flex tw-flex-col tw-gap-4 tw-justify-center tw-items-center">
-        <div className=" tw-w-40 tw-h-40 tw-rounded-full tw-bg-pink-300 tw-uppercase tw-flex tw-justify-center tw-items-center tw-text-5xl">
-          {name && name.substring(0, 2)}
-        </div>
+        {profileImage ? (
+          <img
+            src={profileImage}
+            alt="User Profile"
+            className=" tw-w-40 tw-h-40 tw-rounded-full tw-object-cover"
+          />
+        ) : (
+          <div className=" tw-w-40 tw-h-40 tw-rounded-full tw-bg-pink-300 tw-uppercase tw-flex tw-justify-center tw-items-center tw-text-5xl">
+            {name?.substring(0, 2)}
+          </div>
+        )}
+
         {/* <img
           src={displayImage}
           alt="Display Avatar"

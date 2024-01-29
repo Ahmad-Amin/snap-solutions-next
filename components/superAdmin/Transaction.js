@@ -3,7 +3,7 @@ import Button from "../Common/Button";
 import CurrencyFormatter from '../../utils/CurrencyFormatter'
 
 const Transaction = ({
-  image,
+  profileImage,
   name,
   transactionType,
   status,
@@ -24,7 +24,17 @@ const Transaction = ({
     <tr className=" dark:tw-bg-gray-80 hover:tw-bg-gray-50 tw-cursor-pointer tw-font-normal tw-text-base ">
       <td className=" tw-font-medium tw-text-gray-900 tw-whitespace-nowrap tw-py-4 tw-min-w-60">
         <div className="tw-flex tw-gap-4 tw-items-center">
-          <img src={image} alt="User Avatar" />
+          {profileImage ? (
+            <img
+              src={profileImage}
+              alt="User Profile"
+              className=" tw-w-11 tw-h-11 tw-rounded-full tw-object-cover"
+            />
+          ) : (
+            <div className=" tw-w-11 tw-h-11 tw-rounded-full tw-bg-pink-300 tw-uppercase tw-flex tw-justify-center tw-items-center">
+              {name?.substring(0, 2)}
+            </div>
+          )}
           <p>{name}</p>
         </div>
       </td>

@@ -49,7 +49,7 @@ const SuperAdminSideBar = () => {
             isEnabled={true}
             link="/superadmin/AllUsers"
           />
-          <MenuButtons
+          {/* <MenuButtons
             icon={<RiWallet3Fill />}
             menuText="accounts"
             color="#B2B2B2"
@@ -62,19 +62,19 @@ const SuperAdminSideBar = () => {
             color="#B2B2B2"
             isEnabled={false}
             link="#"
-          />
+          /> */}
         </div>
 
         <div id="otherSection" className="tw-mt-10">
           <p className="tw-p tw-uppercase tw-text-xs tw-font-medium tw-py-2 tw-text-neutral-600">
             Other
           </p>
-          <MenuButtons
+          {/* <MenuButtons
             icon={<IoMdSettings />}
             menuText="settings"
             isEnabled={false}
             link="#"
-          />
+          /> */}
           <div onClick={handleLogOut}>
             <MenuButtons
               icon={<IoMdLogOut />}

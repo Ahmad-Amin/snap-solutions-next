@@ -13,6 +13,8 @@
     "author": "EnvyTheme.com",
     "license": "ISC",
     "dependencies": {
+        "@aws-sdk/client-s3": "^3.501.0",
+        "aws-sdk": "^2.1545.0",
         "axios": "^0.22.0",
         "chart": "^0.1.2",
         "chart.js": "^4.4.1",
