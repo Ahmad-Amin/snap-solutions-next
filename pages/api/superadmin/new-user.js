@@ -215,6 +215,7 @@ export default async (req, res) => {
       term,
       paymentFrequency,
       accountDetails,
+      aprFirst15Month,
     } = req.body;
 
     console.log(req.body)
@@ -241,6 +242,7 @@ export default async (req, res) => {
       term,
       paymentFrequency,
       accountDetails,
+      aprFirst15Month,
     });
 
     const savedUser = await newUser.save();

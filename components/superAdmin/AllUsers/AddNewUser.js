@@ -31,12 +31,23 @@ const AddNewUser = ({ onhideDetails }) => {
     amountDueDate: "",
     term: "",
     paymentFrequency: "",
+    aprFirst15Month: ""
   });
 
   const handleUserInputChange = (field, value) => {
+
+    let clampedValue = value;
+    if (field === 'aprFirst15Month') {
+      const numericValue = parseFloat(value);
+      clampedValue = isNaN(numericValue)
+        ? ""
+        : Math.min(100, numericValue);
+        
+    }
+
     setNewUserDetails((prevState) => ({
       ...prevState,
-      [field]: value,
+      [field]: clampedValue,
     }));
   };
 
@@ -93,7 +104,6 @@ const AddNewUser = ({ onhideDetails }) => {
       onhideDetails(false);
       setSpinnerShow(false);
     }
-
   };
 
   return spinnerShow ? (
@@ -220,6 +230,28 @@ const AddNewUser = ({ onhideDetails }) => {
                   required
                 />
               </div>
+
+              <div className="tw-flex tw-flex-col ">
+                <label
+                  htmlFor="aprFirst15Month"
+                  className=" tw-text-neutral-600 tw-font-semibold tw-text-base tw-mb-2"
+                >
+                  APR% FIRST 15 MONTHS
+                </label>
+                <input
+                  className="tw-input tw-border tw-border-neutral-400 tw-text-neutral-400 tw-rounded-lg tw-py-1.5 tw-px-4"
+                  id="aprFirst15Month"
+                  placeholder="0-100"
+                  type="number"
+                  min="0"
+                  max="100"
+                  value={newUserDetails.aprFirst15Month}
+                  onChange={(e) =>
+                    handleUserInputChange("aprFirst15Month", e.target.value)
+                  }
+                  required
+                />
+              </div>
             </div>
 
             <div className="tw-flex tw-flex-col tw-gap-6">
@@ -268,7 +300,6 @@ const AddNewUser = ({ onhideDetails }) => {
                 </label>
                 <input
                   className="tw-input tw-border tw-border-neutral-400 tw-text-neutral-400 tw-rounded-lg tw-py-1.5 tw-px-4"
-                  placeholder="Company Name"
                   type="text"
                   value={newUserDetails.revolvingLineOfCredit}
                   onChange={(e) =>
@@ -286,7 +317,7 @@ const AddNewUser = ({ onhideDetails }) => {
                   htmlFor="amount"
                   className=" tw-text-neutral-600 tw-font-semibold tw-text-base tw-mb-2"
                 >
-                  Amount Due Date
+                  Amount Due Today
                 </label>
                 <input
                   className="tw-input tw-border tw-border-neutral-400 tw-text-neutral-400 tw-rounded-lg tw-py-1.5 tw-px-4"

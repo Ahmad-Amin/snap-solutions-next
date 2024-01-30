@@ -48,7 +48,7 @@ const RightSideBar = () => {
       <div className=" tw-grid lg:tw-grid-cols-2 tw-grid-cols-1 tw-gap-6">
         <div className=" tw-shadow-md tw-p-5 tw-rounded-md tw-flex tw-flex-col tw-justify-between">
           <p className=" tw-text-black tw-uppercase tw-text-xl ">
-            Amount due date
+            Amount due Today
           </p>
           <p className=" tw-text-black tw-font-bold tw-text-2xl ">
             <CurrencyFormatter amount={user.amountDueDate || "0"} />
@@ -84,7 +84,9 @@ const RightSideBar = () => {
           <p className=" tw-p tw-uppercase tw-font-medium tw-text-lg tw-text-black">
             APR% FIRST 15 MONTHS
           </p>
-          <p className=" tw-p tw-font-bold tw-text-2xl tw-text-black">0%</p>
+          <p className=" tw-p tw-font-bold tw-text-2xl tw-text-black">
+            {user.aprFirst15Month || '---'}%
+          </p>
         </div>
         <div className=" tw-flex tw-justify-between tw-flex-row">
           <p className=" tw-p tw-uppercase tw-font-medium tw-text-lg tw-text-black">

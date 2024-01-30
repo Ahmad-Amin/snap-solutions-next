@@ -34,7 +34,8 @@ const User = new mongoose.Schema({
   term: String,
   paymentFrequency: String,
   estimatedPayOff: String,
-  profileImage: String
+  profileImage: String,
+  aprFirst15Month: String
 });
 
 export default mongoose.models.User || mongoose.model("User", User);
