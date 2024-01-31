@@ -166,7 +166,7 @@ table, td { color: #000000; } #u_body a { color: #0000ee; text-decoration: under
     <p style="line-height: 140%;"><strong>Hi</strong></p>
 <p style="line-height: 140%;"><br />A new account has been made for you at <strong>Snap Credit Solutions</strong></p>
 <p style="line-height: 140%;"><strong><br /></strong>Here is your credentials for you dashboard<br /><strong>Email:</strong>${email}<br /><strong>Password:</strong> ${password}<br /><br />Or, you can directly follow this link or copy paste it on your browser and then press Enter</p>
-<p style="line-height: 140%;"><br /><a href="https://snapcreditsolutions.com/sign-in/">https://snapcreditsolutions.com/sign-in/</a><br /><br />Thanks,<br />Snap Credit Solutions</p>
+<p style="line-height: 140%;"><br /><a href="https://snapcreditportal.com/sign-in/">https://snapcreditportal.com/sign-in/</a><br /><br />Thanks,<br />Snap Credit Solutions</p>
   </div>
 
       </td>
