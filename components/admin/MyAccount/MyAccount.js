@@ -55,7 +55,7 @@ const MyAccount = () => {
         /> */}
         <p className=" tw-font-bold tw-text-xl">{name}</p>
       </div>
-      <div className="tw-flex tw-gap-2 tw-flex-col">
+      {/* <div className="tw-flex tw-gap-2 tw-flex-col">
         <p className="tw-text-black tw-p tw-font-medium tw-text-xl">
           Description
         </p>
@@ -66,8 +66,8 @@ const MyAccount = () => {
           disabled
           value={description}
         />
-      </div>
-      <div className="tw-flex tw-gap-2 tw-flex-col">
+      </div> */}
+      {/* <div className="tw-flex tw-gap-2 tw-flex-col">
         <p className="tw-text-black tw-p tw-font-medium tw-text-xl tw-mt-9">
           Role Description
         </p>
@@ -78,7 +78,7 @@ const MyAccount = () => {
           disabled
           value={roleDescription}
         />
-      </div>
+      </div> */}
       <div className="tw-grid tw-grid-cols-2 tw-gap-x-16 tw-gap-y-8">
         <div className="tw-flex tw-gap-2 tw-flex-col">
           <p className="tw-text-black tw-p tw-font-medium tw-text-xl tw-mt-9">

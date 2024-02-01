@@ -86,9 +86,6 @@ const MainFrontView = () => {
             <div className="tw-mb-5 tw-flex tw-justify-end">
               {/* <img src={Graph} alt="Graph" /> */}
             </div>
-            <p className=" tw-bg-orange-200 tw-p-2 tw-font-normal tw-text-xs tw-inline-block tw-rounded-lg">
-              +2% Past month
-            </p>
           </div>
         </div>
       </div>

@@ -7,7 +7,7 @@ const TransactionDetails = ({ amount, senderDetails, date }) => {
     <div className=" tw-bg-neutral-50 tw-border tw-border-neutral-200 tw-flex tw-justify-between tw-py-3 tw-px-4 tw-mt-4 tw-rounded-md">
       <div>
         <p className="tw-font-normal lg:tw-text-base tw-text-sm tw-mb-1 tw-text-black">
-          Incomming wire from{" "}
+          Pending approval of wire from{" "}
           <span className="tw-font-bold tw-uppercase">
             {senderDetails?.name}
           </span>{" "}
