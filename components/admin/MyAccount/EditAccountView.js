@@ -132,39 +132,11 @@ const EditAccountView = () => {
             </div>
             <button
               onClick={handleImageUpload}
-                disabled={!profileImage || uploading}
-                className=" tw-button"
+              disabled={!profileImage || uploading}
+              className=" tw-button"
             >
               {uploading ? "Uploading..." : "Upload Image"}
             </button>
-          </div>
-          <div className="tw-flex tw-gap-2 tw-flex-col">
-            <p className="tw-p tw-font-medium lg:tw-text-xl tw-text-base">
-              Description
-            </p>
-            <textarea
-              className="tw-border tw-border-neutral-300 lg:tw-px-3 lg:tw-py-5 tw-px-2 tw-py-3 tw-rounded-lg"
-              rows={7}
-              placeholder="Description"
-              value={userDetails.description}
-              onChange={(e) =>
-                handleUserInputChange("description", e.target.value)
-              }
-            />
-          </div>
-          <div className="tw-flex tw-gap-2 tw-flex-col">
-            <p className="tw-p tw-font-medium lg:tw-text-xl tw-text-base">
-              Role Description
-            </p>
-            <textarea
-              className="tw-border tw-border-neutral-300 lg:tw-px-3 lg:tw-py-5 tw-px-2 tw-py-3 tw-rounded-lg"
-              rows={6}
-              placeholder="Role Description"
-              value={userDetails.roleDescription}
-              onChange={(e) =>
-                handleUserInputChange("roleDescription", e.target.value)
-              }
-            />
           </div>
           <div className="tw-flex tw-gap-2 tw-flex-col">
             <p className="tw-p tw-font-medium lg:tw-text-xl tw-text-base">
@@ -232,6 +204,30 @@ const EditAccountView = () => {
               onChange={(e) => handleUserInputChange("country", e.target.value)}
             />
           </div>
+          <div className="tw-flex tw-gap-2 tw-flex-col">
+            <p className="tw-p tw-font-medium lg:tw-text-xl tw-text-base">
+              City
+            </p>
+            <input
+              className="tw-border tw-border-neutral-300 lg:tw-px-3 lg:tw-py-5 tw-px-2 tw-py-3 tw-rounded-lg"
+              type="text"
+              value={userDetails.city}
+              onChange={(e) => handleUserInputChange("city", e.target.value)}
+            />
+          </div>
+          <div className="tw-flex tw-gap-2 tw-flex-col">
+            <p className="tw-p tw-font-medium lg:tw-text-xl tw-text-base">
+              Zip / Postal Code
+            </p>
+            <input
+              className="tw-border tw-border-neutral-300 lg:tw-px-3 lg:tw-py-5 tw-px-2 tw-py-3 tw-rounded-lg"
+              type="text"
+              value={userDetails.postalCode}
+              onChange={(e) =>
+                handleUserInputChange("postalCode", e.target.value)
+              }
+            />
+          </div>
         </div>
         <div className="tw-flex tw-flex-col tw-gap-8">
           <div className="tw-flex tw-gap-2 tw-flex-col">
@@ -276,7 +272,7 @@ const EditAccountView = () => {
               }
             />
           </div>
-          <div className="tw-flex tw-gap-2 tw-flex-col">
+          {/* <div className="tw-flex tw-gap-2 tw-flex-col">
             <p className="tw-p tw-font-medium lg:tw-text-xl tw-text-base">
               Handle
             </p>
@@ -287,7 +283,7 @@ const EditAccountView = () => {
               value={userDetails.handle}
               onChange={(e) => handleUserInputChange("handle", e.target.value)}
             />
-          </div>
+          </div> */}
           <div className="tw-flex tw-gap-2 tw-flex-col">
             <p className="tw-p tw-font-medium lg:tw-text-xl tw-text-base">
               Company Name
@@ -352,30 +348,6 @@ const EditAccountView = () => {
               // onChange={(e) =>
               //   handleUserInputChange("references", e.target.value)
               // }
-            />
-          </div>
-          <div className="tw-flex tw-gap-2 tw-flex-col">
-            <p className="tw-p tw-font-medium lg:tw-text-xl tw-text-base">
-              City
-            </p>
-            <input
-              className="tw-border tw-border-neutral-300 lg:tw-px-3 lg:tw-py-5 tw-px-2 tw-py-3 tw-rounded-lg"
-              type="text"
-              value={userDetails.city}
-              onChange={(e) => handleUserInputChange("city", e.target.value)}
-            />
-          </div>
-          <div className="tw-flex tw-gap-2 tw-flex-col">
-            <p className="tw-p tw-font-medium lg:tw-text-xl tw-text-base">
-              Zip / Postal Code
-            </p>
-            <input
-              className="tw-border tw-border-neutral-300 lg:tw-px-3 lg:tw-py-5 tw-px-2 tw-py-3 tw-rounded-lg"
-              type="text"
-              value={userDetails.postalCode}
-              onChange={(e) =>
-                handleUserInputChange("postalCode", e.target.value)
-              }
             />
           </div>
         </div>

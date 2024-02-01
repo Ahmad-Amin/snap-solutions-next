@@ -44,7 +44,6 @@ const NavigationBar = ({ showLogo }) => {
               <Link className=" tw-bg-transparent" href="/admin/settings">
                 {displayName}
               </Link>
-              <MdKeyboardArrowDown className="tw-text-2xl tw-text-neutral-400" />
             </div>
           </div>
         </div>

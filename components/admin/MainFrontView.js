@@ -97,7 +97,6 @@ const MainFrontView = () => {
           <p className="tw-font-medium 2xl:tw-text-lg lg:tw-text-base tw-text-black">
             Transaction Details
           </p>
-          <input className="tw-text-sm lg:tw-text-base" type="date" />
         </div>
         {spinnerShow ? (
           <Spinner />

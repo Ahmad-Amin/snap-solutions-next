@@ -128,30 +128,6 @@ const MyAccount = () => {
             disabled
           />
         </div>
-        <div className="tw-flex tw-gap-2 tw-flex-col">
-          <p className="tw-text-black tw-p tw-font-medium tw-text-xl tw-mt-9">
-            Achivements
-          </p>
-          <input
-            className="tw-border tw-border-neutral-300 tw-px-3 tw-py-5 tw-rounded-lg"
-            type="text"
-            value={achievements}
-            readOnly
-            disabled
-          />
-        </div>
-        <div className="tw-flex tw-gap-2 tw-flex-col">
-          <p className="tw-text-black tw-p tw-font-medium tw-text-xl tw-mt-9">
-            References
-          </p>
-          <input
-            className="tw-border tw-border-neutral-300 tw-px-3 tw-py-5 tw-rounded-lg"
-            type="text"
-            value={references}
-            readOnly
-            disabled
-          />
-        </div>
       </div>
       <div className="tw-mt-10">
         <Link href="/admin/editAccount/">

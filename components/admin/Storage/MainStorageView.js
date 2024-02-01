@@ -93,7 +93,7 @@ const MainStorageView = () => {
         <input type="file" onChange={handleFileChange} />
         <button onClick={handleUpload}>Upload File</button>
       </div>
-      <div className="tw-grid xl:tw-grid-cols-5 lg:tw-grid-cols-4 md:tw-grid-cols-3 sm:tw-grid-cols-2 tw-gap-4 tw-my-4">
+      {/* <div className="tw-grid xl:tw-grid-cols-5 lg:tw-grid-cols-4 md:tw-grid-cols-3 sm:tw-grid-cols-2 tw-gap-4 tw-my-4">
         <div className="tw-py-5 tw-px-4 tw-rounded-2xl hover:tw-shadow-xl tw-transition tw-ease-in-out tw-duration-300 tw-cursor-pointer">
           <div className=" tw-bg-blue-100 tw-bg-opacity-50 tw-inline-block tw-rounded-sm tw-p-2">
             <img src="/images/icloud-1.svg" alt="Cloud" />
@@ -174,8 +174,8 @@ const MainStorageView = () => {
             </div>
           </div>
         </div>
-      </div>
-      <div>
+      </div> */}
+      {/* <div>
         <h1 className="tw-font-medium tw-text-2xl tw-my-9">Recent Files</h1>
 
         <div className="tw-grid xl:tw-grid-cols-4 sm:tw-grid-cols-2 tw-gap-6">
@@ -200,7 +200,7 @@ const MainStorageView = () => {
             </tbody>
           </table>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };
