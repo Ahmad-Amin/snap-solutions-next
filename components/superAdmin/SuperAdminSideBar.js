@@ -48,6 +48,7 @@ const SuperAdminSideBar = ({ setShowSideBar }) => {
             color="#B2B2B2"
             isEnabled={true}
             link="/dashboard"
+            setShowSideBar={setShowSideBar}
           />
           <MenuButtons
             icon={<ImUsers />}
@@ -55,6 +56,7 @@ const SuperAdminSideBar = ({ setShowSideBar }) => {
             color="#B2B2B2"
             isEnabled={true}
             link="/superadmin/AllUsers"
+            setShowSideBar={setShowSideBar}
           />
           {/* <MenuButtons
             icon={<RiWallet3Fill />}
