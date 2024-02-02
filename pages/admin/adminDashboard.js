@@ -89,7 +89,7 @@ const AdminDasboard = () => {
   return (
     <div
       className={`tw-mx-auto tw-container ${
-        showSideBar ? "" : "tw-h-screen tw-overflow-hidden"
+        showSideBar ? "" : "tw-h-screen tw-overflow-hidden lg:tw-overflow-auto"
       }`}
     >
       <div className="lg:tw-grid lg:tw-grid-cols-5 xl:tw-grid-cols-6">

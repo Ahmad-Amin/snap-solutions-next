@@ -51,8 +51,8 @@ const OverviewCards = ({ transactionDetails }) => {
   }, []);
 
   return (
-    <div className="tw-grid tw-grid-cols-1 sm:tw-grid-cols-2 md:tw-grid-cols-3 lg:tw-grid-cols-4 tw-gap-7">
-      <div className=" tw-bg-white tw-px-5 tw-py-4 tw-rounded-2xl">
+    <div className="tw-grid tw-grid-cols-1 sm:tw-grid-cols-2 md:tw-grid-cols-3 lg:tw-grid-cols-4 tw-gap-2 xl:tw-gap-7">
+      <div className=" tw-bg-white tw-px-3 tw-py-2 xl:tw-px-5 xl:tw-py-4 tw-rounded-2xl">
         <div className=" ">
           <p className="tw-p  tw-font-medium tw-text-sm tw-text-neutral-500">
             Users
@@ -63,29 +63,29 @@ const OverviewCards = ({ transactionDetails }) => {
           <Doughnut data={userdata} options={options} />
         </div>
       </div>
-      <div className=" tw-bg-white tw-px-5 tw-py-4 tw-rounded-2xl tw-overflow-hidden">
+      <div className=" tw-bg-white tw-px-3 tw-py-2 xl:tw-px-5 xl:tw-py-4 tw-rounded-2xl tw-overflow-hidden">
         <div>
           <p className="tw-p tw-font-medium tw-text-sm tw-text-neutral-500">
             Transactions
           </p>
-          <p className="tw-p tw-font-bold tw-text-2xl  tw-mb-5">
+          <p className="tw-p tw-font-bold tw-text-xl xl:tw-text-2xl tw-mb-5">
             <CountUp end={transactionDetails.count} />
           </p>
           <Doughnut data={transactionsGraphData} options={options} />
         </div>
       </div>
-      <div className=" tw-bg-white tw-px-5 tw-py-4 tw-rounded-2xl tw-overflow-hidden">
+      <div className=" tw-bg-white tw-px-3 tw-py-2 xl:tw-px-5 xl:tw-py-4 tw-rounded-2xl tw-overflow-hidden">
         <div>
           <p className="tw-p tw-font-medium tw-text-sm tw-text-neutral-500">
             Total Amount
           </p>
-          <p className="tw-p tw-font-bold tw-text-2xl tw-mb-5">
+          <p className="tw-p tw-font-bold tw-text-xl xl:tw-text-2xl tw-mb-5">
             <CurrencyFormatter amount={transactionDetails.amount} />
           </p>
           <Doughnut className="" data={totalAmountData} options={options} />
         </div>
       </div>
-      <div className="tw-flex tw-gap-5 tw-flex-col">
+      <div className="tw-flex tw-gap-2 xl:tw-gap-5 tw-flex-col">
         <div className="tw-bg-white tw-px-5 tw-py-4 tw-rounded-2xl">
           <p className="tw-p tw-font-medium tw-text-sm tw-text-neutral-500">
             Revenue

@@ -1191,6 +1191,10 @@
     row-gap: 2rem !important
   }
 
+  .md\:tw-overflow-auto {
+    overflow: auto !important
+  }
+
   .md\:tw-px-12 {
     padding-left: 3rem !important;
     padding-right: 3rem !important
@@ -1293,6 +1297,10 @@
   .lg\:tw-gap-x-16 {
     -moz-column-gap: 4rem !important;
          column-gap: 4rem !important
+  }
+
+  .lg\:tw-overflow-auto {
+    overflow: auto !important
   }
 
   .lg\:tw-p-5 {
@@ -1405,6 +1413,18 @@
     gap: 1.5rem !important
   }
 
+  .xl\:tw-gap-7 {
+    gap: 1.75rem !important
+  }
+
+  .xl\:tw-gap-5 {
+    gap: 1.25rem !important
+  }
+
+  .xl\:tw-gap-8 {
+    gap: 2rem !important
+  }
+
   .xl\:tw-px-12 {
     padding-left: 3rem !important;
     padding-right: 3rem !important
@@ -1415,9 +1435,24 @@
     padding-bottom: 1.5rem !important
   }
 
+  .xl\:tw-px-5 {
+    padding-left: 1.25rem !important;
+    padding-right: 1.25rem !important
+  }
+
+  .xl\:tw-py-4 {
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important
+  }
+
   .xl\:tw-text-xl {
     font-size: 1.25rem !important;
     line-height: 1.75rem !important
+  }
+
+  .xl\:tw-text-2xl {
+    font-size: 1.5rem !important;
+    line-height: 2rem !important
   }
 }
 

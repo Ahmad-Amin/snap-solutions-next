@@ -33,7 +33,7 @@ const SuperAdminSideBar = ({ setShowSideBar }) => {
       />
       <div className="tw-px-7 tw-py-9">
         <button
-          className=" tw-absolute tw-top-4 tw-right-4 tw-text-black tw-bg-white"
+          className=" tw-absolute tw-top-4 tw-right-4 tw-text-black tw-bg-white lg:tw-hidden"
           onClick={() => setShowSideBar(true)}
         >
           <RxCross2 />
