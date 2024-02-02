@@ -10,7 +10,6 @@ const AllUsers = () => {
   const [showSideBar, setShowSideBar] = useState(true);
   useEffect(() => {
     const handleResize = () => {
-      console.log(window.innerWidth <= 600);
       setShowSideBar(window.innerWidth <= 1028);
     };
 

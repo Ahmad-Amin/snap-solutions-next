@@ -49,6 +49,7 @@ const Sidebar = ({ setShowSideBar }) => {
             color="#B2B2B2"
             isEnabled={true}
             link="/dashboard"
+            setShowSideBar={setShowSideBar}
           />
           <MenuButtons
             icon={<RiDriveLine />}
@@ -56,6 +57,7 @@ const Sidebar = ({ setShowSideBar }) => {
             color="#B2B2B2"
             isEnabled={true}
             link="/admin/storage"
+            setShowSideBar={setShowSideBar}
           />
         </div>
 
@@ -63,12 +65,12 @@ const Sidebar = ({ setShowSideBar }) => {
           <p className="tw-p tw-uppercase tw-text-xs tw-font-medium tw-py-2 tw-text-neutral-600">
             Other
           </p>
-          <MenuButtons
+          {/* <MenuButtons
             icon={<IoMdSettings />}
             menuText="settings"
             isEnabled={true}
             link="/admin/settings"
-          />
+          /> */}
           <div onClick={handleLogOut}>
             <MenuButtons
               icon={<IoMdLogOut />}

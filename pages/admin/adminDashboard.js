@@ -73,7 +73,6 @@ const AdminDasboard = () => {
 
   useEffect(() => {
     const handleResize = () => {
-      console.log(window.innerWidth <= 600);
       setShowSideBar(window.innerWidth <= 1028);
     };
 
