@@ -27,8 +27,8 @@ const RightSideBar = () => {
           </div>
         </div>
       </div>
-      <div className=" tw-grid lg:tw-grid-cols-2 tw-grid-cols-1 tw-gap-6">
-        <div className=" tw-shadow-md tw-p-5 tw-rounded-md tw-flex tw-flex-col tw-justify-between">
+      <div className=" tw-grid xl:tw-grid-cols-2 tw-grid-cols-1 tw-gap-3 2xl:tw-gap-6">
+        <div className=" tw-shadow-md tw-p-3 2xl:tw-p-5 tw-rounded-md tw-flex tw-flex-col tw-justify-between">
           <p className=" tw-text-black tw-uppercase tw-text-xl ">
             revolving line of credit
           </p>
@@ -36,7 +36,7 @@ const RightSideBar = () => {
             <CurrencyFormatter amount={user.revolvingLineOfCredit || "0"} />
           </p>
         </div>
-        <div className=" tw-shadow-md tw-p-5 tw-rounded-md tw-flex tw-flex-col tw-justify-between">
+        <div className=" tw-shadow-md tw-p-3 2xl:tw-p-5 tw-rounded-md tw-flex tw-flex-col tw-justify-between">
           <p className=" tw-text-black tw-uppercase tw-text-xl ">
             estimated pay off
           </p>
@@ -45,8 +45,8 @@ const RightSideBar = () => {
           </p>
         </div>
       </div>
-      <div className=" tw-grid lg:tw-grid-cols-2 tw-grid-cols-1 tw-gap-6">
-        <div className=" tw-shadow-md tw-p-5 tw-rounded-md tw-flex tw-flex-col tw-justify-between">
+      <div className=" tw-grid lg:tw-grid-cols-2 tw-grid-cols-1 tw-gap-3 2xl:tw-gap-6">
+        <div className=" tw-shadow-md tw-p-3 2xl:tw-p-5 tw-rounded-md tw-flex tw-flex-col tw-justify-between">
           <p className=" tw-text-black tw-uppercase tw-text-xl ">
             Amount due Today
           </p>
@@ -54,7 +54,7 @@ const RightSideBar = () => {
             <CurrencyFormatter amount={user.amountDueDate || "0"} />
           </p>
         </div>
-        <div className=" tw-shadow-md tw-p-5 tw-rounded-md tw-flex tw-flex-col tw-justify-between">
+        <div className=" tw-shadow-md tw-p-3 2xl:tw-p-5 tw-rounded-md tw-flex tw-flex-col tw-justify-between">
           <p className=" tw-text-black tw-uppercase tw-text-xl ">
             Past due date
           </p>
@@ -85,7 +85,7 @@ const RightSideBar = () => {
             APR% FIRST 24 MONTHS
           </p>
           <p className=" tw-p tw-font-bold tw-text-2xl tw-text-black">
-            {user.aprFirst15Month || '---'}%
+            {user.aprFirst15Month || "---"}%
           </p>
         </div>
         <div className=" tw-flex tw-justify-between tw-flex-row">

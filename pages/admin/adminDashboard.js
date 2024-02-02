@@ -15,7 +15,7 @@ const AdminDasboard = () => {
   const userCtx = useContext(UserContext);
   const [modalShow, setModalShow] = useState(false);
   const [spinnerShow, setSpinnerShow] = useState(false);
-  const [showSideBar, setShowSideBar] = useState(true)
+  const [showSideBar, setShowSideBar] = useState(false)
 
   const { addToast } = useToasts();
 
@@ -71,13 +71,28 @@ const AdminDasboard = () => {
     }
   };
 
+  useEffect(() => {
+    const handleResize = () => {
+      console.log(window.innerWidth <= 600);
+      setShowSideBar(window.innerWidth <= 1028);
+    };
+
+    handleResize();
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   return (
     <div
       className={`tw-mx-auto tw-container ${
         showSideBar ? "" : "tw-h-screen tw-overflow-hidden"
       }`}
     >
-      <div className="xl:tw-grid xl:tw-grid-cols-6">
+      <div className="lg:tw-grid lg:tw-grid-cols-5 xl:tw-grid-cols-6">
         <div
           className={`tw-bg-neutral-100 tw-py-11 tw-px-5 tw-h-screen tw-ease-in-out tw-transition-all tw-duration-500  ${
             showSideBar ? "tw-absolute -tw-left-full tw-block " : " tw-left-0"
@@ -86,7 +101,7 @@ const AdminDasboard = () => {
           <Sidebar showSideBar={showSideBar} setShowSideBar={setShowSideBar} />
         </div>
         <div
-          className={`md:tw-py-6 md:tw-px-12 tw-py-3 tw-px-6 xl:tw-col-span-5 `}
+          className={`lg:tw-py-6 lg:tw-px-12 tw-py-3 tw-px-6 tw-col-span-4 xl:tw-col-span-5 `}
         >
           <NavigationBar
             showLogo={false}
