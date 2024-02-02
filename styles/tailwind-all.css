@@ -132,6 +132,10 @@
   }
 }
 
+.tw-fixed {
+  position: fixed !important
+}
+
 .tw-absolute {
   position: absolute !important
 }
@@ -140,12 +144,44 @@
   position: relative !important
 }
 
+.-tw-left-full {
+  left: -100% !important
+}
+
 .-tw-top-4 {
   top: -1rem !important
 }
 
+.tw-left-0 {
+  left: 0px !important
+}
+
 .tw-right-0 {
   right: 0px !important
+}
+
+.tw-right-16 {
+  right: 4rem !important
+}
+
+.tw-top-16 {
+  top: 4rem !important
+}
+
+.tw-right-10 {
+  right: 2.5rem !important
+}
+
+.tw-top-10 {
+  top: 2.5rem !important
+}
+
+.tw-right-4 {
+  right: 1rem !important
+}
+
+.tw-top-4 {
+  top: 1rem !important
 }
 
 .tw-col-span-1 {
@@ -258,6 +294,10 @@
   margin-top: 2.25rem !important
 }
 
+.tw-mt-3 {
+  margin-top: 0.75rem !important
+}
+
 .tw-block {
   display: block !important
 }
@@ -276,6 +316,10 @@
 
 .tw-grid {
   display: grid !important
+}
+
+.tw-hidden {
+  display: none !important
 }
 
 .tw-h-11 {
@@ -336,6 +380,19 @@
 
 .tw-w-full {
   width: 100% !important
+}
+
+.tw-w-auto {
+  width: auto !important
+}
+
+.tw-w-max {
+  width: -moz-max-content !important;
+  width: max-content !important
+}
+
+.tw-w-36 {
+  width: 9rem !important
 }
 
 .tw-min-w-36 {
@@ -449,6 +506,16 @@
 
 .tw-gap-y-8 {
   row-gap: 2rem !important
+}
+
+.tw-gap-x-4 {
+  -moz-column-gap: 1rem !important;
+       column-gap: 1rem !important
+}
+
+.tw-gap-x-8 {
+  -moz-column-gap: 2rem !important;
+       column-gap: 2rem !important
 }
 
 .tw-overflow-hidden {
@@ -609,11 +676,6 @@
   background-color: rgb(255 237 213 / var(--tw-bg-opacity)) !important
 }
 
-.tw-bg-orange-200 {
-  --tw-bg-opacity: 1 !important;
-  background-color: rgb(254 215 170 / var(--tw-bg-opacity)) !important
-}
-
 .tw-bg-pink-300 {
   --tw-bg-opacity: 1 !important;
   background-color: rgb(249 168 212 / var(--tw-bg-opacity)) !important
@@ -622,11 +684,6 @@
 .tw-bg-red-400 {
   --tw-bg-opacity: 1 !important;
   background-color: rgb(248 113 113 / var(--tw-bg-opacity)) !important
-}
-
-.tw-bg-red-500 {
-  --tw-bg-opacity: 1 !important;
-  background-color: rgb(239 68 68 / var(--tw-bg-opacity)) !important
 }
 
 .tw-bg-transparent {
@@ -641,11 +698,6 @@
 .tw-bg-yellow-200 {
   --tw-bg-opacity: 1 !important;
   background-color: rgb(254 240 138 / var(--tw-bg-opacity)) !important
-}
-
-.tw-bg-blue-500 {
-  --tw-bg-opacity: 1 !important;
-  background-color: rgb(59 130 246 / var(--tw-bg-opacity)) !important
 }
 
 .tw-bg-opacity-50 {
@@ -679,6 +731,10 @@
 
 .tw-p-9 {
   padding: 2.25rem !important
+}
+
+.tw-p-6 {
+  padding: 1.5rem !important
 }
 
 .tw-px-12 {
@@ -769,6 +825,11 @@
 .tw-py-9 {
   padding-top: 2.25rem !important;
   padding-bottom: 2.25rem !important
+}
+
+.tw-px-1 {
+  padding-left: 0.25rem !important;
+  padding-right: 0.25rem !important
 }
 
 .tw-pb-5 {
@@ -976,12 +1037,22 @@
   transition-duration: 150ms !important
 }
 
+.tw-transition-all {
+  transition-property: all !important;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1) !important;
+  transition-duration: 150ms !important
+}
+
 .tw-duration-150 {
   transition-duration: 150ms !important
 }
 
 .tw-duration-300 {
   transition-duration: 300ms !important
+}
+
+.tw-duration-500 {
+  transition-duration: 500ms !important
 }
 
 .tw-ease-in-out {
@@ -1045,6 +1116,10 @@
 }
 
 @media (min-width: 768px) {
+  .md\:tw-left-0 {
+    left: 0px !important
+  }
+
   .md\:tw-col-span-2 {
     grid-column: span 2 / span 2 !important
   }
@@ -1058,12 +1133,28 @@
     margin-bottom: 0.5rem !important
   }
 
+  .md\:tw-mt-9 {
+    margin-top: 2.25rem !important
+  }
+
+  .md\:tw-hidden {
+    display: none !important
+  }
+
+  .md\:tw-w-72 {
+    width: 18rem !important
+  }
+
   .md\:tw-grid-cols-3 {
     grid-template-columns: repeat(3, minmax(0, 1fr)) !important
   }
 
   .md\:tw-grid-cols-5 {
     grid-template-columns: repeat(5, minmax(0, 1fr)) !important
+  }
+
+  .md\:tw-grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important
   }
 
   .md\:tw-flex-row {
@@ -1076,6 +1167,20 @@
 
   .md\:tw-gap-0 {
     gap: 0px !important
+  }
+
+  .md\:tw-gap-x-16 {
+    -moz-column-gap: 4rem !important;
+         column-gap: 4rem !important
+  }
+
+  .md\:tw-gap-x-8 {
+    -moz-column-gap: 2rem !important;
+         column-gap: 2rem !important
+  }
+
+  .md\:tw-gap-y-8 {
+    row-gap: 2rem !important
   }
 
   .md\:tw-px-12 {
@@ -1098,13 +1203,41 @@
     padding-bottom: 1.5rem !important
   }
 
+  .md\:tw-px-20 {
+    padding-left: 5rem !important;
+    padding-right: 5rem !important
+  }
+
+  .md\:tw-px-10 {
+    padding-left: 2.5rem !important;
+    padding-right: 2.5rem !important
+  }
+
+  .md\:tw-py-12 {
+    padding-top: 3rem !important;
+    padding-bottom: 3rem !important
+  }
+
   .md\:tw-text-sm {
     font-size: 0.875rem !important;
     line-height: 1.25rem !important
   }
+
+  .md\:tw-text-xl {
+    font-size: 1.25rem !important;
+    line-height: 1.75rem !important
+  }
 }
 
 @media (min-width: 1024px) {
+  .lg\:tw-hidden {
+    display: none !important
+  }
+
+  .lg\:tw-w-72 {
+    width: 18rem !important
+  }
+
   .lg\:tw-grid-cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr)) !important
   }
@@ -1115,6 +1248,10 @@
 
   .lg\:tw-flex-row {
     flex-direction: row !important
+  }
+
+  .lg\:tw-flex-col {
+    flex-direction: column !important
   }
 
   .lg\:tw-justify-center {
@@ -1133,6 +1270,11 @@
     gap: 2rem !important
   }
 
+  .lg\:tw-gap-x-16 {
+    -moz-column-gap: 4rem !important;
+         column-gap: 4rem !important
+  }
+
   .lg\:tw-p-5 {
     padding: 1.25rem !important
   }
@@ -1145,6 +1287,21 @@
   .lg\:tw-py-5 {
     padding-top: 1.25rem !important;
     padding-bottom: 1.25rem !important
+  }
+
+  .lg\:tw-px-20 {
+    padding-left: 5rem !important;
+    padding-right: 5rem !important
+  }
+
+  .lg\:tw-px-12 {
+    padding-left: 3rem !important;
+    padding-right: 3rem !important
+  }
+
+  .lg\:tw-py-12 {
+    padding-top: 3rem !important;
+    padding-bottom: 3rem !important
   }
 
   .lg\:tw-text-3xl {
@@ -1188,6 +1345,10 @@
 
   .xl\:tw-grid {
     display: grid !important
+  }
+
+  .xl\:tw-w-72 {
+    width: 18rem !important
   }
 
   .xl\:tw-grid-cols-4 {

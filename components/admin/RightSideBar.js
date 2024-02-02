@@ -82,7 +82,7 @@ const RightSideBar = () => {
         </div>
         <div className=" tw-flex tw-justify-between tw-flex-row">
           <p className=" tw-p tw-uppercase tw-font-medium tw-text-lg tw-text-black">
-            APR% FIRST 15 MONTHS
+            APR% FIRST 24 MONTHS
           </p>
           <p className=" tw-p tw-font-bold tw-text-2xl tw-text-black">
             {user.aprFirst15Month || '---'}%

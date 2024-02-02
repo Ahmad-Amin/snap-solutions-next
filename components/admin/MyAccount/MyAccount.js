@@ -31,7 +31,7 @@ const MyAccount = () => {
   const name = (firstName || "") + (lastName ? ` ${lastName}` : "");
 
   return (
-    <div className="tw-px-20">
+    <div className=" tw-px-1 md:tw-px-10 lg:tw-px-20">
       <p className=" tw-text-black tw-font-semibold tw-text-3xl tw-my-4">
         My Account
       </p>
@@ -79,13 +79,13 @@ const MyAccount = () => {
           value={roleDescription}
         />
       </div> */}
-      <div className="tw-grid tw-grid-cols-2 tw-gap-x-16 tw-gap-y-8">
+      <div className="tw-grid tw-grid-cols-2 tw-gap-x-4 md:tw-gap-x-8 lg:tw-gap-x-16 tw-gap-4 md:tw-gap-y-8">
         <div className="tw-flex tw-gap-2 tw-flex-col">
-          <p className="tw-text-black tw-p tw-font-medium tw-text-xl tw-mt-9">
+          <p className="tw-text-black tw-p tw-font-medium lg:tw-text-xl tw-text-base tw-mt-3 md:tw-mt-9">
             Company Name
           </p>
           <input
-            className="tw-border tw-border-neutral-300 tw-px-3 tw-py-5 tw-rounded-lg"
+            className="tw-border tw-border-neutral-300 lg:tw-px-3 lg:tw-py-5 tw-px-2 tw-py-3 tw-rounded-lg"
             type="text"
             value={companyName}
             readOnly
@@ -93,11 +93,11 @@ const MyAccount = () => {
           />
         </div>
         <div className="tw-flex tw-gap-2 tw-flex-col">
-          <p className="tw-text-black tw-p tw-font-medium tw-text-xl tw-mt-9">
+          <p className="tw-text-black tw-p tw-font-medium lg:tw-text-xl tw-text-base tw-mt-3 md:tw-mt-9">
             Email Address
           </p>
           <input
-            className="tw-border tw-border-neutral-300 tw-px-3 tw-py-5 tw-rounded-lg"
+            className="tw-border tw-border-neutral-300 lg:tw-px-3 lg:tw-py-5 tw-px-2 tw-py-3 tw-rounded-lg"
             type="text"
             value={email}
             readOnly
@@ -105,11 +105,11 @@ const MyAccount = () => {
           />
         </div>
         <div className="tw-flex tw-gap-2 tw-flex-col">
-          <p className="tw-text-black tw-p tw-font-medium tw-text-xl tw-mt-9">
+          <p className="tw-text-black tw-p tw-font-medium lg:tw-text-xl tw-text-base tw-mt-3 md:tw-mt-9">
             Company Address
           </p>
           <input
-            className="tw-border tw-border-neutral-300 tw-px-3 tw-py-5 tw-rounded-lg"
+            className="tw-border tw-border-neutral-300 lg:tw-px-3 lg:tw-py-5 tw-px-2 tw-py-3 tw-rounded-lg"
             type="text"
             value={companyAddress}
             readOnly
@@ -117,11 +117,11 @@ const MyAccount = () => {
           />
         </div>
         <div className="tw-flex tw-gap-2 tw-flex-col">
-          <p className="tw-text-black tw-p tw-font-medium tw-text-xl tw-mt-9">
+          <p className="tw-text-black tw-p tw-font-medium lg:tw-text-xl tw-text-base tw-mt-3 md:tw-mt-9">
             Phone Number
           </p>
           <input
-            className="tw-border tw-border-neutral-300 tw-px-3 tw-py-5 tw-rounded-lg"
+            className="tw-border tw-border-neutral-300 lg:tw-px-3 lg:tw-py-5 tw-px-2 tw-py-3 tw-rounded-lg"
             type="text"
             value={phoneNumber}
             readOnly

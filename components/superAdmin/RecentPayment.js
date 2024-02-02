@@ -9,7 +9,7 @@ const RecentPayment = () => {
       <h1 className="tw-font-medium tw-text-xl tw-leading-5 tw-mb-4">
         Recent Payments
       </h1>
-      <div className="tw-grid tw-grid-cols-2 tw-gap-8">
+      <div className="tw-grid tw-grid-cols-1 lg:tw-grid-cols-2 tw-gap-8">
         <div className=" tw-bg-white tw-rounded-2xl tw-flex tw-justify-between tw-py-4 tw-px-3">
           <div className="tw-flex tw-gap-5">
             <div className="tw-flex tw-justify-center tw-items-center">

@@ -60,13 +60,13 @@ const AddNewUser = ({ onhideDetails }) => {
 
   const continueToAddAccountDetails = async (e) => {
     e.preventDefault();
-    if (!isFormValid()) {
-      addToast("Please Fill out all the fields to proceed", {
-        appearance: "error",
-        autoDismiss: true,
-      });
-      return;
-    }
+    // if (!isFormValid()) {
+    //   addToast("Please Fill out all the fields to proceed", {
+    //     appearance: "error",
+    //     autoDismiss: true,
+    //   });
+    //   return;
+    // }
 
     setShowBankDetails(true);
   };
@@ -113,8 +113,8 @@ const AddNewUser = ({ onhideDetails }) => {
       {showBankDetails ? (
         <AccountDetails addAccountDetails={addNewUser} />
       ) : (
-        <form className=" tw-px-12 tw-py-12">
-          <div className=" tw-grid tw-grid-cols-2 tw-gap-6">
+        <form className=" tw-p-6 lg:tw-px-12 lg:tw-py-12">
+          <div className=" tw-grid tw-grid-cols-1 lg:tw-grid-cols-2 tw-gap-6">
             <div className="tw-flex tw-flex-col tw-gap-6">
               <div className="tw-flex tw-flex-col ">
                 <label
@@ -124,7 +124,7 @@ const AddNewUser = ({ onhideDetails }) => {
                   Name
                 </label>
                 <input
-                  className="tw-input tw-border tw-border-neutral-400 tw-text-neutral-400 tw-rounded-lg tw-py-1.5 tw-px-4 tw-w-72 "
+                  className="tw-input tw-border tw-border-neutral-400 tw-text-neutral-400 tw-rounded-lg tw-py-1.5 tw-px-4 tw-w-auto xl:tw-w-72 "
                   id="name"
                   placeholder="Name"
                   type="text"
@@ -236,7 +236,7 @@ const AddNewUser = ({ onhideDetails }) => {
                   htmlFor="aprFirst15Month"
                   className=" tw-text-neutral-600 tw-font-semibold tw-text-base tw-mb-2"
                 >
-                  APR% FIRST 15 MONTHS
+                  APR% FIRST 24 MONTHS
                 </label>
                 <input
                   className="tw-input tw-border tw-border-neutral-400 tw-text-neutral-400 tw-rounded-lg tw-py-1.5 tw-px-4"
@@ -263,7 +263,7 @@ const AddNewUser = ({ onhideDetails }) => {
                   Email
                 </label>
                 <input
-                  className="tw-input tw-border tw-border-neutral-400 tw-text-neutral-400 tw-rounded-lg tw-py-1.5 tw-px-4 tw-w-72 "
+                  className="tw-input tw-border tw-border-neutral-400 tw-text-neutral-400 tw-rounded-lg tw-py-1.5 tw-px-4 tw-w-auto xl:tw-w-72 "
                   placeholder="Email"
                   type="email"
                   value={newUserDetails.email}

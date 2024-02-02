@@ -12,8 +12,10 @@ import MenuButtons from "../Common/MenuButtons";
 
 import { useRouter } from "next/router";
 import { useToasts } from "react-toast-notifications";
+import { RxCross2 } from "react-icons/rx";
 
-const Sidebar = () => {
+
+const Sidebar = ({ setShowSideBar }) => {
   const userCtx = useContext(UserContext);
   const router = useRouter();
   const { addToast } = useToasts();
@@ -24,13 +26,19 @@ const Sidebar = () => {
   };
 
   return (
-    <div>
+    <div className="tw-relative">
       <img
         className="tw-h-auto tw-max-w-full"
         alt="Website logo"
         src="/images/logo-white.png"
       />
-      <div className="tw-px-7 tw-py-9">
+      <div className="tw-px-7 tw-py-9 ">
+        <button
+          className=" tw-absolute tw-top-4 tw-right-4 tw-block tw-hidden"
+          onClick={() => setShowSideBar(true)}
+        >
+          <RxCross2 />
+        </button>
         <div id="mainmenu">
           <p className="tw-p tw-uppercase tw-text-xs tw-font-medium tw-py-2 tw-text-neutral-600">
             main menu

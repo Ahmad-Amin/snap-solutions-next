@@ -65,9 +65,6 @@ const MainFrontView = () => {
           conditions and requirements that must be met to gain access to your
           revolving line of credit
         </p>
-        <p className="tw-p tw-font-normal tw-text-base tw-text-red-500 tw-my-3">
-          100%
-        </p>
       </div>
       <div className="tw-border tw-border-neutral-200 tw-rounded-xl tw-p-5">
         <div className="tw-grid tw-grid-cols-3">

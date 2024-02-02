@@ -51,7 +51,7 @@ const OverviewCards = ({ transactionDetails }) => {
   }, []);
 
   return (
-    <div className="tw-grid tw-grid-cols-4 tw-gap-7">
+    <div className="tw-grid tw-grid-cols-1 sm:tw-grid-cols-2 md:tw-grid-cols-3 lg:tw-grid-cols-4 tw-gap-7">
       <div className=" tw-bg-white tw-px-5 tw-py-4 tw-rounded-2xl">
         <div className=" ">
           <p className="tw-p  tw-font-medium tw-text-sm tw-text-neutral-500">

@@ -8,9 +8,11 @@ import { MdKeyboardArrowDown } from "react-icons/md";
 // import { Link } from "react-router-dom";
 
 import UserContext from "../../store/user-context";
+import { CiMenuBurger } from "react-icons/ci";
+
 import Link from "next/link";
 
-const NavigationBar = ({ showLogo }) => {
+const NavigationBar = ({ showLogo, setShowSideBar, showSideBar }) => {
   const userCtx = useContext(UserContext);
 
   const { firstName, lastName, profileImage } = userCtx.user;
@@ -21,6 +23,12 @@ const NavigationBar = ({ showLogo }) => {
   return (
     <>
       <div className="tw-flex ">
+        <p
+          className={`${showSideBar ? " tw-text-2xl" : " tw-hidden"}`}
+          onClick={() => setShowSideBar((prevState) => !prevState)}
+        >
+          <CiMenuBurger />
+        </p>
         <Link className="" href="/dashboard">
           <div className="tw-bg-transparent tw-cursor-pointer">
             {showLogo && <img src="/images/logo-white.png" alt="Site Logo" />}
