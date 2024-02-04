@@ -65,12 +65,13 @@ const Sidebar = ({ setShowSideBar }) => {
           <p className="tw-p tw-uppercase tw-text-xs tw-font-medium tw-py-2 tw-text-neutral-600">
             Other
           </p>
-          {/* <MenuButtons
+          <MenuButtons
             icon={<IoMdSettings />}
             menuText="settings"
             isEnabled={true}
             link="/admin/settings"
-          /> */}
+            setShowSideBar={setShowSideBar}
+          />
           <div onClick={handleLogOut}>
             <MenuButtons
               icon={<IoMdLogOut />}
