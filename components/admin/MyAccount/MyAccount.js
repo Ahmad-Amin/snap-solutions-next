@@ -1,27 +1,14 @@
-import react, { useEffect, useContext } from "react";
+import { useContext } from "react";
 import Link from "next/link";
 import UserContext from "../../../store/user-context";
-import { useRouter } from "next/router";
 
 const MyAccount = () => {
   const userCtx = useContext(UserContext);
-  const router = useRouter();
-  const { user } = userCtx;
-
-  // useEffect(() => {
-  //   if (Object.keys(user).length === 0) {
-  //     router.push("/dashboard");
-  //   }
-  // }, [userCtx.user, router]);
 
   const {
-    description,
-    roleDescription,
     companyName,
     companyAddress,
     phoneNumber,
-    achievements,
-    references,
     email,
     firstName,
     lastName,
@@ -48,37 +35,8 @@ const MyAccount = () => {
           </div>
         )}
 
-        {/* <img
-          src={displayImage}
-          alt="Display Avatar"
-          className="tw-w-40 tw-h-40 tw-rounded-full tw-object-cover"
-        /> */}
         <p className=" tw-font-bold tw-text-xl">{name}</p>
       </div>
-      {/* <div className="tw-flex tw-gap-2 tw-flex-col">
-        <p className="tw-text-black tw-p tw-font-medium tw-text-xl">
-          Description
-        </p>
-        <textarea
-          className="tw-border tw-border-neutral-300 tw-px-3 tw-py-5 tw-rounded-lg"
-          rows={6}
-          readOnly
-          disabled
-          value={description}
-        />
-      </div> */}
-      {/* <div className="tw-flex tw-gap-2 tw-flex-col">
-        <p className="tw-text-black tw-p tw-font-medium tw-text-xl tw-mt-9">
-          Role Description
-        </p>
-        <textarea
-          className="tw-border tw-border-neutral-300 tw-px-3 tw-py-5 tw-rounded-lg"
-          rows={5}
-          readOnly
-          disabled
-          value={roleDescription}
-        />
-      </div> */}
       <div className="tw-grid tw-grid-cols-2 tw-gap-x-4 md:tw-gap-x-8 lg:tw-gap-x-16 tw-gap-4 md:tw-gap-y-8">
         <div className="tw-flex tw-gap-2 tw-flex-col">
           <p className="tw-text-black tw-p tw-font-medium lg:tw-text-xl tw-text-base tw-mt-3 md:tw-mt-9">

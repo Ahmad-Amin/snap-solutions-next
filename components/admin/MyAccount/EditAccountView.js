@@ -1,26 +1,22 @@
 "use client";
-import React, { useState, useEffect } from "react";
-// import Link from "next/link";
-import axios from "axios";
-// import { toast } from "react-toastify";
-// import "react-toastify/dist/ReactToastify.css";
+import React, { useState, useEffect, useContext } from "react";
 import { useRouter } from "next/router";
-import { useContext } from "react";
-import UserContext from "../../../store/user-context";
 import Link from "next/link";
+import axios from "axios";
 import { useToasts } from "react-toast-notifications";
+import UserContext from "../../../store/user-context";
 import Spinner from "../../../utils/Spinner/Spinner";
 import baseUrl from "../../../utils/baseUrl";
 
 const EditAccountView = () => {
   const userCtx = useContext(UserContext);
-  const [spinnerShow, setSpinnerShow] = useState(false);
-  const router = useRouter();
   const { user } = userCtx;
   const { addToast } = useToasts();
+  const [spinnerShow, setSpinnerShow] = useState(false);
   const [userDetails, setUserDetails] = useState({});
   const [profileImage, setProfileImage] = useState(null);
   const [uploading, setUploading] = useState(false);
+  const router = useRouter();
 
   useEffect(() => {
     const userKeys = Object.keys(userCtx.user);

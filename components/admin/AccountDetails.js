@@ -18,11 +18,10 @@ const AccountDetails = ({ addAccountDetails }) => {
   };
 
   const handleSubmit = () => {
-    if (
-      !accountDetails.beneficiaryName ||
-      !accountDetails.accountNumber ||
-      !accountDetails.expiryDate
-    ) {
+
+    const { beneficiaryName, accountNumber, expiryDate } = accountDetails;
+
+    if (beneficiaryName || accountNumber || expiryDate) {
       addToast(`Error: All fields are required`, {
         appearance: "error",
         autoDismiss: true,

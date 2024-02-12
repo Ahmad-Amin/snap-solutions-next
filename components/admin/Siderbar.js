@@ -1,24 +1,18 @@
 import React, { useContext } from "react";
-
-import { LuLayoutDashboard } from "react-icons/lu";
-import { RiDriveLine } from "react-icons/ri";
-import { CgNotes } from "react-icons/cg";
-import { BiSupport } from "react-icons/bi";
-import { IoMdSettings } from "react-icons/io";
-import { IoMdLogOut } from "react-icons/io";
+import { useRouter } from "next/router";
 
 import UserContext from "../../store/user-context";
 import MenuButtons from "../Common/MenuButtons";
 
-import { useRouter } from "next/router";
-import { useToasts } from "react-toast-notifications";
+import { LuLayoutDashboard } from "react-icons/lu";
+import { RiDriveLine } from "react-icons/ri";
+import { IoMdSettings } from "react-icons/io";
+import { IoMdLogOut } from "react-icons/io";
 import { RxCross2 } from "react-icons/rx";
-
 
 const Sidebar = ({ setShowSideBar }) => {
   const userCtx = useContext(UserContext);
   const router = useRouter();
-  const { addToast } = useToasts();
 
   const handleLogOut = () => {
     userCtx.logoutUser();

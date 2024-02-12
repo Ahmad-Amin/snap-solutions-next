@@ -1,16 +1,9 @@
-import React, { useContext } from "react";
-
-import { CiSearch } from "react-icons/ci";
-import { IoIosNotifications } from "react-icons/io";
-import { RiMessage2Fill } from "react-icons/ri";
-import { MdKeyboardArrowDown } from "react-icons/md";
-
-// import { Link } from "react-router-dom";
+import React, { useContext } from "react";;
+import Link from "next/link";
 
 import UserContext from "../../store/user-context";
 import { CiMenuBurger } from "react-icons/ci";
 
-import Link from "next/link";
 
 const NavigationBar = ({ showLogo, setShowSideBar, showSideBar }) => {
   const userCtx = useContext(UserContext);

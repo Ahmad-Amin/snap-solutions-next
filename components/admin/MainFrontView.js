@@ -1,12 +1,12 @@
 import React, { useContext, useEffect, useState } from "react";
+import axios from "axios";
+import Link from "next/link";
+
 import UserContext from "../../store/user-context";
 import CurrencyFormatter from "../../utils/CurrencyFormatter";
 import TransactionDetails from "./TransactionDetails";
-import baseUrl from "../../utils/baseUrl";
-import axios from "axios";
 import Spinner from "../../utils/Spinner/Spinner";
-import Link from "next/link";
-// import Graph from "../assets/graph.png";
+import baseUrl from "../../utils/baseUrl";
 
 const MainFrontView = () => {
   const userCtx = useContext(UserContext);
@@ -55,15 +55,12 @@ const MainFrontView = () => {
                 Access Funds
               </p>
             </Link>
-            {/* <button className=" tw-button tw-text-base md:tw-text-sm 2xl:tw-px-7 2xl:tw-py-4 tw-px-4 tw-py-2 tw-rounded-lg tw-font-normal tw-text-custom-blue tw-bg-transparent tw-border tw-border-custom-blue">
-              Send Message
-            </button> */}
           </div>
         </div>
         <p>
-          *As per the terms outlined in your original contract, there are certain
-          conditions and requirements that must be met to gain access to your
-          revolving line of credit
+          *As per the terms outlined in your original contract, there are
+          certain conditions and requirements that must be met to gain access to
+          your revolving line of credit
         </p>
       </div>
       <div className="tw-border tw-border-neutral-200 tw-rounded-xl tw-p-5">
@@ -81,7 +78,6 @@ const MainFrontView = () => {
           </div>
           <div className="tw-col-span-1 tw-text-right">
             <div className="tw-mb-5 tw-flex tw-justify-end">
-              {/* <img src={Graph} alt="Graph" /> */}
             </div>
           </div>
         </div>

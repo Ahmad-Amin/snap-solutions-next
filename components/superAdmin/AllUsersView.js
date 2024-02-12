@@ -1,6 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
 import { CiCirclePlus } from "react-icons/ci";
-// import AddNewUser from "../../components/SuperAdmin/AddNewUser";
 import UserRecord from "./AllUsers/UserRecord";
 import Modal from "../../utils/Modal/Modal";
 import axios from "axios";

@@ -1,7 +1,6 @@
 import React, { useContext, useState } from "react";
 import axios from "axios";
 
-import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 
 import baseUrl from "../../../utils/baseUrl";
@@ -10,7 +9,6 @@ import UserContext from "../../../store/user-context";
 import Spinner from "../../../utils/Spinner/Spinner";
 
 import AccountDetails from "../../admin/AccountDetails";
-import Modal from "../../../utils/Modal/Modal";
 
 const AddNewUser = ({ onhideDetails }) => {
   const userCtx = useContext(UserContext);
@@ -60,13 +58,13 @@ const AddNewUser = ({ onhideDetails }) => {
 
   const continueToAddAccountDetails = async (e) => {
     e.preventDefault();
-    // if (!isFormValid()) {
-    //   addToast("Please Fill out all the fields to proceed", {
-    //     appearance: "error",
-    //     autoDismiss: true,
-    //   });
-    //   return;
-    // }
+    if (!isFormValid()) {
+      addToast("Please Fill out all the fields to proceed", {
+        appearance: "error",
+        autoDismiss: true,
+      });
+      return;
+    }
 
     setShowBankDetails(true);
   };
