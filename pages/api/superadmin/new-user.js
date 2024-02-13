@@ -146,7 +146,7 @@ table, td { color: #000000; } #u_body a { color: #0000ee; text-decoration: under
   <tr>
     <td style="padding-right: 0px;padding-left: 0px;" align="center">
       
-      <img align="center" border="0" src="https://drive.google.com/uc?export=download&id=1dTcQeegoYdiczPGrcSCc-HdsQ7upvmYU" alt="" title="" style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: inline-block !important;border: none;height: auto;float: none;width: 100%;max-width: 188px;" width="188"/>
+      <img align="center" border="0" src="https://snap-credit-solutions.s3.amazonaws.com/logo-white.png" alt="" title="" style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: inline-block !important;border: none;height: auto;float: none;width: 100%;max-width: 188px;" width="188"/>
       
     </td>
   </tr>
