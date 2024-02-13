@@ -27,7 +27,7 @@ const AllUsersView = () => {
         );
         if (response.status === 200 && response.data !== null) {
           userCtx.saveUsersToGlobalStore(response.data);
-          setAllUsers(response.data);
+          // userCtx.setAllUsers(response.data);
         }
       } catch (error) {
         console.log(error);
